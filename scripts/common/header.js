@@ -7,7 +7,11 @@ And
 Done
             </p>
         </div>
-        <nav></nav>
+        <div id="header-dropdown-div">
+            <div id="header-dropdown-content"></div>
+            <nav>
+            </nav>
+        </div>
         <div id="sign-in-div"></div>`
 
 document.body.prepend(header)
