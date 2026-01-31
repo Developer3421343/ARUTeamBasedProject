@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 header {
+    --header-height: 110px;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     position: sticky;
     background-color: red;
-    height: 110px;
+    height: var(--header-height);
     width: 100dvw;
 }
 
@@ -15,16 +16,17 @@ body {
 }
 
 #logo-div {
-    height: 90px;
-    margin: 10px;
+    --logo-div-margin: 10px;
+    height: calc(var(--header-height) - 2 * var(--logo-div-margin));
+    margin: var(--logo-div-margin);
     background-color: yellow;
     display: flex;
     flex-direction: row;
 }
 
 #header-logo {
-    height: 90px;
-    width: 90px;
+    height: calc(var(--header-height) - 2 * var(--logo-div-margin));
+    width: calc(var(--header-height) - 2 * var(--logo-div-margin));
     background-color: orange;
 }
 
@@ -32,7 +34,7 @@ body {
     font-family: "Roboto", sans-serif;
     white-space-collapse: preserve;
     margin: 0;
-    line-height: 30px;
+    line-height: calc((var(--header-height) - 2 * var(--logo-div-margin)) / 3); /*One third of logo height*/
     font-size: 27px;
     margin-left: 5px;
 }
