@@ -1,4 +1,4 @@
-const header = document.createElement("header")
+const header = document.createElement("header");
 
 header.innerHTML = `
 <div id="logo-div">
@@ -30,21 +30,20 @@ Done
         </ul>
     </div>
 </nav>
-<div id="sign-in-div"></div>`
+<div id="sign-in-div"></div>`;
 
-document.body.prepend(header)
+document.body.prepend(header);
 
-document.querySelectorAll('#header-dropdown-menu [data-id]').forEach(el => {
+document.querySelectorAll("#header-dropdown-menu [data-id]").forEach((el) => {
+	["mouseover", "focus"].forEach((evt) =>
+		el.addEventListener(evt, () => {
+			document.querySelector(`#header-dropdown-content [data-id="${el.dataset.id}"]`)?.classList.add("header-dropdown-show");
+		}),
+	);      
 
-  el.addEventListener('mouseover', () => {
-    document
-      .querySelector(`#header-dropdown-content [data-id="${el.dataset.id}"]`)
-      ?.classList.add('header-dropdown-show');
-  });
-
-  el.addEventListener('mouseout', () => {
-    document
-      .querySelector(`#header-dropdown-content [data-id="${el.dataset.id}"]`)
-      ?.classList.remove('header-dropdown-show');
-  });
+	["mouseout", "blur"].forEach((evt) =>
+        el.addEventListener(evt, () => {
+            document.querySelector(`#header-dropdown-content [data-id="${el.dataset.id}"]`)?.classList.remove("header-dropdown-show");
+        })
+    );
 });
