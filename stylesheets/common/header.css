@@ -66,6 +66,10 @@ body {
   z-index: 1;
 }
 
-#header-dropdown-div:hover #header-dropdown-content {
-    display: block;
+#header-dropdown-content > * {
+    display: none;
+}
+
+#header-dropdown-div:hover #header-dropdown-content, .header-dropdown-show {
+    display: block !important;
 }
