@@ -40,13 +40,16 @@ document.body.prepend(header);
 document.querySelectorAll("#header-dropdown-menu [data-id]").forEach((el) => {
 	["mouseover", "focus"].forEach((evt) =>
 		el.addEventListener(evt, () => {
+            document.querySelectorAll(`#header-dropdown-content .header-dropdown-show`).forEach((e) => {
+                e.classList.remove("header-dropdown-show");
+            })
 			document.querySelector(`#header-dropdown-content [data-id="${el.dataset.id}"]`)?.classList.add("header-dropdown-show");
 		}),
 	);      
 
 	["mouseout", "blur"].forEach((evt) =>
         el.addEventListener(evt, () => {
-            document.querySelector(`#header-dropdown-content [data-id="${el.dataset.id}"]`)?.classList.remove("header-dropdown-show");
+            document.querySelector(`#header-dropdown-div`)?.classList.remove("header-dropdown-show");
         })
     );
 });
