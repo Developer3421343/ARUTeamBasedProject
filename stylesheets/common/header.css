@@ -22,13 +22,15 @@ body {
     background-color: yellow;
     display: flex;
     flex-direction: row;
+    padding-right: 10px;
 }
 
 #header-logo {
     height: calc(var(--header-height) - 2 * var(--logo-div-margin));
     width: calc(var(--header-height) - 2 * var(--logo-div-margin));
-    background-color: orange;
 }
+
+
 
 #logo-div p {
     font-family: "Roboto", sans-serif;
@@ -40,10 +42,25 @@ body {
 }
 
 #sign-in-div {
-    height: 90px;
-    width: 90px;
-    margin: 10px;
+    --sign-in-text-inline-gap: 15px;
+    --sign-in-margin: 25px;
+    height: calc(var(--header-height) - 2 * var(--sign-in-margin));
+    margin: var(--sign-in-margin);
+    display: flex;
+    align-items: center;
+    padding-left: var(--sign-in-text-inline-gap);
+    font-family: "Roboto", sans-serif;
     background-color: yellow;
+}
+
+#sign-in-div > label {
+    font-size: 1.3rem;
+}
+
+#sign-in-image {
+    height: calc(var(--header-height) - 2 * var(--sign-in-margin));
+    width: calc(var(--header-height) - 2 * var(--sign-in-margin));
+    margin-left: var(--sign-in-text-inline-gap);
 }
 
 #header-dropdown-div {
@@ -87,4 +104,5 @@ body {
 #header-dropdown-menu > * {
     flex: 1;
     height: 100%;
+    font-size: 1.15rem;
 }

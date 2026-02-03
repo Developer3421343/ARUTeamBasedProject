@@ -2,7 +2,7 @@ const header = document.createElement("header");
 
 header.innerHTML = `
 <div id="logo-div">
-    <div id="header-logo"></div>
+    <img src="images/common/logo.png" id="header-logo" alt="Company logo" />
     <p>One
 And
 Done
@@ -30,7 +30,10 @@ Done
         </ul>
     </div>
 </nav>
-<div id="sign-in-div"></div>`;
+<div id="sign-in-div">
+    <label for="sign-in-button">Sign in</label>
+    <img src="images/common/sign-in.png" id="sign-in-image" alt="" />
+</div>`;
 
 document.body.prepend(header);
 
