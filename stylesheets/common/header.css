@@ -2,9 +2,6 @@
 
 header {
     --header-height: 110px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
     position: sticky;
     background-color: red;
     height: var(--header-height);
@@ -17,6 +14,8 @@ body {
 
 #logo-div {
     --logo-div-margin: 10px;
+    display: block;
+    float: left;
     height: calc(var(--header-height) - 2 * var(--logo-div-margin));
     margin: var(--logo-div-margin);
     background-color: yellow;
@@ -44,6 +43,8 @@ body {
 #sign-in-div {
     --sign-in-text-inline-gap: 15px;
     --sign-in-margin: 25px;
+    display: block;
+    float: right;
     height: calc(var(--header-height) - 2 * var(--sign-in-margin));
     margin: var(--sign-in-margin);
     display: flex;
@@ -64,11 +65,14 @@ body {
 }
 
 #header-dropdown-div {
+    --header-dropdown-radius: 10px;
     --header-nav-height: 50px;
-    width: 400px;
+    --header-nav-width: 400px;
+    position: absolute;
+    bottom: 0;
+    right: calc(50% - var(--header-nav-width)/2);
+    width: var(--header-nav-width);
     height: var(--header-nav-height);
-    background-color: yellow;
-    position: relative;
     display: inline-block;
     font-family: "Roboto", sans-serif;
 }
@@ -84,10 +88,13 @@ body {
     z-index: 1;
     box-sizing: border-box;
     padding: 20px;
+    border-radius: 0 0 var(--header-dropdown-radius) var(--header-dropdown-radius);
 }
 
 #header-dropdown-content > * {
     display: none;
+    width: 100%;
+    flex-direction: row;
 }
 
 #header-dropdown-div:hover #header-dropdown-content,
@@ -96,15 +103,38 @@ body {
     display: block !important;
 }
 
+#header-dropdown-div:hover #header-dropdown-content,
+#header-dropdown-div:focus-within #header-dropdown-content,
+div.header-dropdown-show {
+    display: flex !important;
+}
+
 #header-dropdown-menu {
+    border-radius: var(--header-dropdown-radius) var(--header-dropdown-radius) 0 0;
+    overflow: hidden;
     display: flex;
     flex-direction: row;
     height: 100%;
 }
+
+#header-dropdown-menu > *:first-of-type {
+    border-top-left-radius: inherit;
+}
+
+#header-dropdown-menu > *:last-of-type {
+    border-top-right-radius: inherit;
+}
+
 #header-dropdown-menu > * {
     flex: 1;
     height: 100%;
     font-size: 1.15rem;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+#header-dropdown-content > div > * {
+    flex-grow: 1;
 }
 
 #header-dropdown-content li > a {
