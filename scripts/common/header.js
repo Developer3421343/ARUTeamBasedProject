@@ -10,46 +10,46 @@ Done
 </div>
 <nav id="header-dropdown-div">
     <div id="header-dropdown-menu">
-        <button data-id="a" >Menu 1</button>
-        <button data-id="b" >Menu 2</button>
-        <button data-id="c" >Menu 3</button>
+        <button aria-haspopup="true" aria-expanded="false" aria-controls="dropdown-a" data-id="a" >Menu 1</button>
+        <button aria-haspopup="true" aria-expanded="false" aria-controls="dropdown-b" data-id="b" >Menu 2</button>
+        <button aria-haspopup="true" aria-expanded="false" aria-controls="dropdown-c" data-id="c" >Menu 3</button>
     </div>
 
     <div id="header-dropdown-content">
-        <ul data-id="a" class="has-header">
+        <ul id="dropdown-a" data-id="a" class="has-header" role="menu" aria-label="Dropdown A">
             <li><strong>Header</strong></li>
-            <li><a href="#">Item 1A</a></li>
-            <li><a href="#">Item 1B</a></li>
-            <li><a href="#">Item 1C</a></li>
-            <li><a href="#">Item 1D</a></li>
+            <li><a href="#" role="menuitem" tabindex="0">Item 1A</a></li>
+            <li><a href="#" role="menuitem" tabindex="0">Item 1B</a></li>
+            <li><a href="#" role="menuitem" tabindex="0">Item 1C</a></li>
+            <li><a href="#" role="menuitem" tabindex="0">Item 1D</a></li>
         </ul>
-        <div data-id="b"> 
-            <ul class="has-header">
+        <div id="dropdown-b" data-id="b" role="menu" aria-label="Dropdown B"> 
+            <ul class="has-header" role="menu" aria-label="Submenu 1">
                 <li><strong>Header</strong></li>
-                <li><a href="#">Item 3A</a></li>
-                <li><a href="#">Item 3B</a></li>
+                <li><a href="#" role="menuitem" tabindex="0">Item 3A</a></li>
+                <li><a href="#" role="menuitem" tabindex="0">Item 3B</a></li>
             </ul>
-            <ul class="has-header">
+            <ul class="has-header" role="menu" aria-label="Submenu 2">
                 <li><strong>Header</strong></li>
-                <li><a href="#">Item 4A</a></li>
-                <li><a href="#">Item 4B</a></li>
+                <li><a href="#" role="menuitem" tabindex="0">Item 4A</a></li>
+                <li><a href="#" role="menuitem" tabindex="0">Item 4B</a></li>
             </ul>
-            <ul class="has-header">
+            <ul class="has-header" role="menu" aria-label="Submenu 3">
                 <li><strong>Header</strong></li>
-                <li><a href="#">Item 4A</a></li>
-                <li><a href="#">Item 4B</a></li>
+                <li><a href="#" role="menuitem" tabindex="0">Item 4A</a></li>
+                <li><a href="#" role="menuitem" tabindex="0">Item 4B</a></li>
             </ul>
         </div>
-        <div data-id="c"> 
-            <ul class="has-header">
+        <div id="dropdown-c" data-id="c" role="menu" aria-label="Dropdown C"> 
+            <ul class="has-header" role="menu" aria-label="Submenu 1">
                 <li><strong>Header</strong></li>
-                <li><a href="#">Item 3A</a></li>
-                <li><a href="#">Item 3B</a></li>
+                <li><a href="# role="menuitem" tabindex="0"">Item 3A</a></li>
+                <li><a href="# role="menuitem" tabindex="0"">Item 3B</a></li>
             </ul>
-            <ul class="has-header">
+            <ul class="has-header" role="menu" aria-label="Submenu 2">
                 <li><strong>Header</strong></li>
-                <li><a href="#">Item 4A</a></li>
-                <li><a href="#">Item 4B</a></li>
+                <li><a href="# role="menuitem" tabindex="0">Item 4A</a></li>
+                <li><a href="# role="menuitem" tabindex="0">Item 4B</a></li>
             </ul>
         </div>
     </div>
@@ -68,12 +68,14 @@ document.querySelectorAll("#header-dropdown-menu [data-id]").forEach((el) => {
                 e.classList.remove("header-dropdown-show");
             })
 			document.querySelector(`#header-dropdown-content [data-id="${el.dataset.id}"]`)?.classList.add("header-dropdown-show");
+            el.setAttribute("aria-expanded", "true");
 		}),
 	);      
 
 	["mouseout", "blur"].forEach((evt) =>
         el.addEventListener(evt, () => {
             document.querySelector(`#header-dropdown-div`)?.classList.remove("header-dropdown-show");
+            el.setAttribute("aria-expanded", "false");
         })
     );
 });
