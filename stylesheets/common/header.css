@@ -22,13 +22,15 @@ body {
     background-color: yellow;
     display: flex;
     flex-direction: row;
+    padding-right: 10px;
 }
 
 #header-logo {
     height: calc(var(--header-height) - 2 * var(--logo-div-margin));
     width: calc(var(--header-height) - 2 * var(--logo-div-margin));
-    background-color: orange;
 }
+
+
 
 #logo-div p {
     font-family: "Roboto", sans-serif;
@@ -40,32 +42,87 @@ body {
 }
 
 #sign-in-div {
-    height: 90px;
-    width: 90px;
-    margin: 10px;
+    --sign-in-text-inline-gap: 15px;
+    --sign-in-margin: 25px;
+    height: calc(var(--header-height) - 2 * var(--sign-in-margin));
+    margin: var(--sign-in-margin);
+    display: flex;
+    align-items: center;
+    padding-left: var(--sign-in-text-inline-gap);
+    font-family: "Roboto", sans-serif;
     background-color: yellow;
 }
 
+#sign-in-div > label {
+    font-size: 1.3rem;
+}
+
+#sign-in-image {
+    height: calc(var(--header-height) - 2 * var(--sign-in-margin));
+    width: calc(var(--header-height) - 2 * var(--sign-in-margin));
+    margin-left: var(--sign-in-text-inline-gap);
+}
+
 #header-dropdown-div {
-    --header-nav-height: 65px;
-    width: 500px;
+    --header-nav-height: 50px;
+    width: 400px;
     height: var(--header-nav-height);
     background-color: yellow;
     position: relative;
     display: inline-block;
+    font-family: "Roboto", sans-serif;
 }
 
 #header-dropdown-content {
-  display: none;
-  position: absolute;
-  top: var(--header-nav-height);
-  background-color: green;
-  min-width: 100%;
-  min-height: 100px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
+    display: none;
+    position: absolute;
+    top: var(--header-nav-height);
+    background-color: white;
+    min-width: 100%;
+    min-height: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    box-sizing: border-box;
+    padding: 20px;
 }
 
-#header-dropdown-div:hover #header-dropdown-content {
-    display: block;
+#header-dropdown-content > * {
+    display: none;
+}
+
+#header-dropdown-div:hover #header-dropdown-content,
+#header-dropdown-div:focus-within #header-dropdown-content,
+.header-dropdown-show {
+    display: block !important;
+}
+
+#header-dropdown-menu {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+#header-dropdown-menu > * {
+    flex: 1;
+    height: 100%;
+    font-size: 1.15rem;
+}
+
+#header-dropdown-content li > a {
+    color: black;
+    text-decoration: none;
+}
+
+#header-dropdown-content li > strong {
+    color: black;
+    font-size: 1.1rem;
+}
+
+#header-dropdown-content  *.has-header li:last-of-type:before {
+    content: " └ ";
+    color: black;
+}
+
+#header-dropdown-content  *.has-header li:not(:last-of-type):not(:first-of-type):before {
+    content: " ├ ";
+    color: black;
 }
