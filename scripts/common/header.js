@@ -16,17 +16,19 @@ Done
     </div>
 
     <div id="header-dropdown-content">
-        <ul data-id="a">
-            <li>Item 1A</li>
-            <li>Item 1B</li>
+        <ul data-id="a" class="has-header">
+            <li><strong>Header</strong></li>
+            <li><a href="#">Item 1A</a></li>
+            <li><a href="#">Item 1B</a></li>
         </ul>
         <ul data-id="b">
-            <li>Item 2A</li>
-            <li>Item 2B</li>
+            <li><a href="#">Item 2A</a></li>
+            <li><a href="#">Item 2B</a></li>
         </ul>
-        <ul data-id="c">
-            <li>Item 3A</li>
-            <li>Item 3B</li>
+        <ul data-id="c" class="has-header">
+            <li><strong>Header</strong></li>
+            <li><a href="#">Item 3A</a></li>
+            <li><a href="#">Item 3B</a></li>
         </ul>
     </div>
 </nav>
