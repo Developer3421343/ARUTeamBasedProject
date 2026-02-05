@@ -79,3 +79,34 @@ document.querySelectorAll("#header-dropdown-menu [data-id]").forEach((el) => {
         })
     );
 });
+
+
+///// Keyboard navigability for header dropdown
+// Map creation
+const headerNavElements = new Map();
+
+Array.from(document.getElementById("header-dropdown-menu").children).forEach((menuHeader) => {
+    
+    let target = document.getElementById(menuHeader.getAttribute('aria-controls'));
+    
+    switch (target.tagName) {
+        case "DIV":
+            let submenus = [];
+
+            Array.from(target.children).forEach((ul) => {
+                submenus.push(Array.from(ul.querySelectorAll("a")));
+            });
+
+            headerNavElements.set(menuHeader, submenus);
+            break;
+
+        case "UL":
+            headerNavElements.set(menuHeader, [target.querySelectorAll("a")]);            
+            break;
+
+        default:
+            break;
+    }
+
+});
+// Navigation handling
