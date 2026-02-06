@@ -1,5 +1,28 @@
 #hero-section {
-    background-color: greenyellow;
     width: 100%;
-    height: 100dvh;
+    height: calc(100dvh - var(--header-height));
+    /* Grid handling */
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 4fr 1fr;
+}
+
+#hero-image-div {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+#hero-sign-in-div {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+#hero-text-div {
+  grid-column: 2;
+  grid-row: 1 / 3; /* span both rows */
+}
+
+#hero-section > * {
+    outline: 1px solid black;
+    text-align: center;
 }
