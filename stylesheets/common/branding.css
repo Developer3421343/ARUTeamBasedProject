@@ -1,0 +1,30 @@
+/* Exo 2 import */
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
+/* Source Sans import */
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+
+/* Colours and fonts currently being discussed in WhatsApp */
+:root {
+    --primary-colour: #0AEFFF; 
+    --secondary-colour: #4DD528;
+    --accent-colour: #FF9D00;
+    --header-font-family: "Exo 2", sans-serif;
+    --body-font-family: "Source Sans 3", sans-serif;
+}
+
+body {
+    margin: 0;
+    font-family: var(--body-font-family);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--header-font-family);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
