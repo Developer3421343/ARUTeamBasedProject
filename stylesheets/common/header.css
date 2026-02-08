@@ -113,6 +113,7 @@ div.header-dropdown-show {
     display: flex;
     flex-direction: row;
     height: 100%;
+    font-family: var(--header-font-family);
 }
 
 #header-dropdown-menu > *:hover, #header-dropdown-menu > *:focus {
@@ -147,14 +148,21 @@ div.header-dropdown-show {
 #header-dropdown-content li > strong {
     color: black;
     font-size: 1.1rem;
+    font-family: var(--header-font-family);
 }
 
 #header-dropdown-content  *.has-header li:last-of-type:before {
     content: " └ ";
     color: black;
+    font-family: monospace;
 }
 
 #header-dropdown-content  *.has-header li:not(:last-of-type):not(:first-of-type):before {
     content: " ├ ";
     color: black;
+    font-family: monospace;
+}
+
+#header-dropdown-content li {
+    line-height: 1.18rem;
 }
