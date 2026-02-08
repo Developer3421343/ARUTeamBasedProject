@@ -15,6 +15,12 @@
 #hero-sign-in-div {
   grid-column: 1;
   grid-row: 2;
+
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 1fr max-content 1fr;
+  vertical-align: middle;
 }
 
 #hero-text-div {
@@ -25,4 +31,32 @@
 #hero-section > * {
     outline: 1px solid black;
     text-align: center;
+}
+
+#sign-in-seperator {
+  --seperator-width: 2px;
+  --seperator-height: 75%;
+  
+  width: var(--seperator-width);
+  height: var(--seperator-height);
+
+  left: calc(50% - (var(--seperator-width)/2));
+  top: calc((100% - var(--seperator-height))/2);
+  background-color: black;
+
+  position: absolute
+}
+
+#sign-in-buttons-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.sign-in-button {
+  --button-height: 70px;
+  width: 150px;
+  height: var(--button-height);
+  border-radius: calc(var(--button-height)/2);
+  font-size: 1.5rem;
 }
