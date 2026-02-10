@@ -19,7 +19,7 @@
   position: relative;
 
   display: grid;
-  grid-template-columns: 1fr max-content 1fr;
+  grid-template-columns: 1fr 1fr;
   vertical-align: middle;
 }
 
@@ -59,4 +59,28 @@
   height: var(--button-height);
   border-radius: calc(var(--button-height)/2);
   font-size: 1.5rem;
+}
+
+.sign-in-button:hover {
+  cursor: pointer;
+  background-color: gainsboro;
+}
+
+
+#sign-in-text-div {
+  padding: 20px;
+  text-align: left;
+  font-size: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#sign-in-text-div > b {
+  font-family: var(--header-font-family);
+  font-size: 1.25rem;
+}
+
+#sign-in-text-div > p {
+  margin: 5px 0 0 0;
 }
