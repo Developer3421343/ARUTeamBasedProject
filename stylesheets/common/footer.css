@@ -1,7 +1,7 @@
 footer {
   grid-row: 3;
   width: 100%;
-  background-color: red;
+  background-color: var(--primary-colour);
   box-sizing: border-box;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;

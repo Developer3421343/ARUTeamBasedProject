@@ -4,7 +4,7 @@
 
 header {
     position: sticky;
-    background-color: red;
+    background-color: var(--primary-colour);
     height: var(--header-height);
     width: 100%;
 }
@@ -117,7 +117,7 @@ div.header-dropdown-show {
 }
 
 #header-dropdown-menu > *:hover, #header-dropdown-menu > *:focus {
-    background-color: gainsboro;
+    background-color: color-mix(in srgb, var(--secondary-colour) 85%, black);;
 }
 
 #header-dropdown-menu > *:first-of-type {
@@ -134,6 +134,7 @@ div.header-dropdown-show {
     font-size: 1.15rem;
     border: 1px solid black;
     border-collapse: collapse;
+    background-color: var(--secondary-colour);
 }
 
 #header-dropdown-content > div > * {
