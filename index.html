@@ -4,21 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | One and Done</title>
+    <link rel="stylesheet" href="/home.css">
+    <!-- Header -->
     <script src="/scripts/common/header.js" defer></script>
     <link rel="stylesheet" href="/stylesheets/common/header.css">
+    <!-- Footer -->
     <script src="/scripts/common/footer.js" defer></script>
     <link rel="stylesheet" href="/stylesheets/common/footer.css">
-    <link rel="stylesheet" href="/home.css">
+    <!-- Branding -->
     <link rel="stylesheet" href="stylesheets/common/branding.css">
+    <!-- Carousel -->
+    <script src="scripts/shared/components/carousel.js" defer></script>
     <link rel="stylesheet" href="stylesheets/shared/components/carousel.css">
 </head>
 <body>
     <section id="hero-section">
-        <div id="hero-image-div" class="carousel-wrapper">
-            <button class="carousel-nav-button left"></button>
-            <button class="carousel-nav-button right"></button>
+        <div id="hero-image-div" class="carousel">
+            <button class="carousel-nav-button left"><span><</span></button>
+            <button class="carousel-nav-button right"><span>></span></button>
 
-            <div class="carousel-img-div">
+            <div class="carousel-img-div visible">
                 <div class="carousel-number-div">1 / 3</div>
                 <img src="LOCAL_ONLY/jviyib4viboa1.jpg">
             </div>
@@ -31,6 +36,12 @@
             <div class="carousel-img-div">
                 <div class="carousel-number-div">3 / 3</div>
                 <img src="LOCAL_ONLY/nxlqdhj9f5oa1.jpg">
+            </div>
+            
+            <div class="carousel-dot-div">
+                <button aria-label="Navigate to slide 1" class="carousel-dot selected"></button>
+                <button aria-label="Navigate to slide 2" class="carousel-dot"></button>
+                <button aria-label="Navigate to slide 3" class="carousel-dot"></button>
             </div>
         </div>
         <div id="hero-sign-in-div">
