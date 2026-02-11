@@ -5,8 +5,10 @@
 
 /* Colours and fonts currently being discussed in WhatsApp */
 :root {
-    --primary-colour: #255EC7; 
+    --primary-colour: #255EC7;
+    --primary-contrast: #FFFFFF; 
     --secondary-colour: #FFC72C;
+    --secondary-hover: color-mix(in srgb, var(--secondary-colour) 85%, black);
     --accent-colour: #FF9D00;
     --header-font-family: "Exo 2", sans-serif;
     --body-font-family: "Source Sans 3", sans-serif;
