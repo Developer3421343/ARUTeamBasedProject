@@ -21,6 +21,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   vertical-align: middle;
+  background-color: var(--primary-colour);
+  color: var(--primary-contrast)
 }
 
 #hero-text-div {
@@ -59,11 +61,12 @@
   height: var(--button-height);
   border-radius: calc(var(--button-height)/2);
   font-size: 1.5rem;
+  background-color: var(--secondary-colour);
 }
 
 .sign-in-button:hover {
   cursor: pointer;
-  background-color: gainsboro;
+  background-color: var(--secondary-hover);
 }
 
 
