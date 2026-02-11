@@ -15,7 +15,7 @@ footer {
 }
 ul {
     list-style: none; 
-    color: white;
+    color: var(--primary-contrast);
     margin: 0;
     padding: 0;
 }

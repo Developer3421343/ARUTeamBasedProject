@@ -117,7 +117,7 @@ div.header-dropdown-show {
 }
 
 #header-dropdown-menu > *:hover, #header-dropdown-menu > *:focus {
-    background-color: color-mix(in srgb, var(--secondary-colour) 85%, black);;
+    background-color: var(--secondary-hover);
 }
 
 #header-dropdown-menu > *:first-of-type {
