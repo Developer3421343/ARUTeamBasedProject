@@ -48,3 +48,17 @@ function navigateCarouselToIndex(carousel, index) {
 		}
 	});
 }
+
+document.querySelectorAll(".carousel-dot").forEach((e) => {
+	e.addEventListener("click", (event) => {
+		try {
+			console.log(e.parentElement.parentElement);
+			console.log(e.getAttribute("data-slide"));
+			navigateCarouselToIndex(e.parentElement.parentElement, e.getAttribute("data-slide"));
+		} catch (error) {
+			
+		}
+	})
+});
+
+// TODO: ~7 sec autoscroll
