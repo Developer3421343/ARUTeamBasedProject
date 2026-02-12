@@ -17,8 +17,14 @@ document.querySelectorAll(".carousel-nav-button").forEach((e) => {
 
 		let oldIdx = carouselIdxs.get(e.parentElement);
 
+		let newIdx = oldIdx + navAmount;
+
+		if (newIdx > maxIdx) {
+			newIdx = 0;
+		}
+
 		// Clamp index in range
-		let newIdx = Math.max(Math.min(oldIdx + navAmount, maxIdx), 0);
+		newIdx = Math.max(Math.min(newIdx, maxIdx), 0);
 
 		// Set new value
 		carouselIdxs.set(e.parentElement, newIdx);
