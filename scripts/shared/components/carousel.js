@@ -62,3 +62,29 @@ document.querySelectorAll(".carousel-dot").forEach((e) => {
 });
 
 // TODO: ~7 sec autoscroll
+
+const interval = setInterval(function() {
+	document.querySelectorAll(".carousel").forEach((e) => {
+		// Get current idx
+		let currentIdx = carouselIdxs.get(e);
+
+		// Max slide index
+		let maxIdx = e.parentElement.querySelectorAll(".carousel-img-div").length - 1;
+
+		let newIdx = currentIdx + 1;
+
+		if (newIdx > maxIdx) {
+			newIdx = 0;
+		}
+
+
+		// Increment and clamp index in range
+		newIdx = Math.max(Math.min(newIdx, maxIdx), 0);
+
+		carouselIdxs.set(e, newIdx)
+		
+		// Navigate to new slide
+		navigateCarouselToIndex(e, newIdx);
+	});
+	
+ }, 7000);
