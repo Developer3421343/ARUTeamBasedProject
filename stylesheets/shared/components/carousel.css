@@ -44,7 +44,7 @@
     position: absolute;
     visibility: hidden;
     object-fit: cover;    
-    transform: translateX(-150%);
+    transform: translateX(50%);
     transition: transform 900ms linear;
 }
 
@@ -54,7 +54,7 @@
 }
 
 .carousel-img.leaving {
-    transform: translateX(50%);
+    transform: translateX(-150%);
     visibility: visible;
 }
 
