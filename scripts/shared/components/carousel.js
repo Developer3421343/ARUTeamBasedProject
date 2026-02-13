@@ -1,3 +1,23 @@
+///// Populate carousel-dot-div
+document.querySelectorAll(".carousel").forEach((e) => {
+	for(let i = 0; i < e.querySelectorAll(".carousel-img").length; i++){
+		let navDot = document.createElement("button");
+		navDot.classList.add("carousel-dot");
+		if (i == 0) {
+			navDot.classList.add("selected");
+		}
+		navDot.setAttribute("data-slide", i);
+		navDot.setAttribute("aria-label", `Navigate to slide ${i+1}`);
+
+		e.querySelector(".carousel-dot-div").appendChild(navDot);
+	}
+});
+
+
+
+
+
+
 let carouselIdxs = new Map();
 let carouselBusy = new Map();
 
@@ -40,7 +60,7 @@ document.querySelectorAll(".carousel-nav-button").forEach((e) => {
 
 function navigateCarouselToIndex(carousel, index) {
 	if (!carouselBusy.get(carousel)){
-		carousel.querySelectorAll(".carousel-number-div")[0].innerHTML = `${index + 1} / ${carousel.querySelectorAll(".carousel-img").length}`;
+		carousel.querySelectorAll(".carousel-number-div")[0].innerHTML = `${Number(index) + 1} / ${carousel.querySelectorAll(".carousel-img").length}`;
 		carouselBusy.set(carousel, true);
 		let oldElement = carousel.querySelectorAll(".carousel-img")[carouselIdxs.get(carousel)];
 		carouselIdxs.set(carousel, index);
@@ -76,7 +96,7 @@ document.querySelectorAll(".carousel-dot").forEach((e) => {
 		try {
 			console.log(e.parentElement.parentElement);
 			console.log(e.getAttribute("data-slide"));
-			navigateCarouselToIndex(e.parentElement.parentElement, e.getAttribute("data-slide"));
+			navigateCarouselToIndex(e.parentElement.parentElement, Number(e.getAttribute("data-slide")));
 		} catch (error) {
 			
 		}
