@@ -1,7 +1,10 @@
 let carouselIdxs = new Map();
+let carouselBusy = new Map();
+
 
 document.querySelectorAll(".carousel").forEach((e) => {
 	carouselIdxs.set(e, 0);
+	carouselBusy.set(e, false);
 });
 
 document.querySelectorAll(".carousel-nav-button").forEach((e) => {
@@ -25,41 +28,44 @@ document.querySelectorAll(".carousel-nav-button").forEach((e) => {
 
 		// Clamp index in range
 		newIdx = Math.max(Math.min(newIdx, maxIdx), 0);
-
+		console.log(newIdx);
 		// Navigate to image
 		navigateCarouselToIndex(e.parentElement, newIdx);
 
-		// Set new value
-		carouselIdxs.set(e.parentElement, newIdx);
+		
 	});
 });
 
 function navigateCarouselToIndex(carousel, index) {
-    let oldElement = carousel.querySelectorAll(".carousel-img-div")[carouselIdxs.get(carousel)];
-	console.log(carouselIdxs[carousel]);
-	// Change image
-	let newElement = carousel.querySelectorAll(".carousel-img-div")[index];
-	newElement.classList.add("visible");
-	oldElement.classList.add("leaving");
-	carousel.querySelectorAll(".carousel-img-div").forEach((e) => {
-		if (e != newElement) {
-			e.classList.remove("visible");
-		}
-	});
+	if (!carouselBusy.get(carousel)){
+		carouselBusy.set(carousel, true);
+		let oldElement = carousel.querySelectorAll(".carousel-img-div")[carouselIdxs.get(carousel)];
+		carouselIdxs.set(carousel, index);
+		// Change image
+		let newElement = carousel.querySelectorAll(".carousel-img-div")[index];
+		newElement.classList.add("visible");
+		oldElement.classList.add("leaving");
+		carousel.querySelectorAll(".carousel-img-div").forEach((e) => {
+			if (e != newElement) {
+				e.classList.remove("visible");
+			}
+		});
 
-	setTimeout(() => {
-	 oldElement.classList.remove("leaving");
-	}, 950); 
+		setTimeout(() => {
+		oldElement.classList.remove("leaving");
+		carouselBusy.set(carousel, false);
+		}, 950); 
 
-    // Change dot
-    let dotDiv = carousel.querySelectorAll(".carousel-dot-div")[0];
-    let newDot = dotDiv.querySelectorAll(".carousel-dot")[index];
-	newDot.classList.add("selected");
-	dotDiv.querySelectorAll(".carousel-dot").forEach((e) => {
-		if (e != newDot) {
-			e.classList.remove("selected");
-		}
-	});
+		// Change dot
+		let dotDiv = carousel.querySelectorAll(".carousel-dot-div")[0];
+		let newDot = dotDiv.querySelectorAll(".carousel-dot")[index];
+		newDot.classList.add("selected");
+		dotDiv.querySelectorAll(".carousel-dot").forEach((e) => {
+			if (e != newDot) {
+				e.classList.remove("selected");
+			}
+		});
+	}
 }
 
 document.querySelectorAll(".carousel-dot").forEach((e) => {
@@ -68,7 +74,6 @@ document.querySelectorAll(".carousel-dot").forEach((e) => {
 			console.log(e.parentElement.parentElement);
 			console.log(e.getAttribute("data-slide"));
 			navigateCarouselToIndex(e.parentElement.parentElement, e.getAttribute("data-slide"));
-			carouselIdxs.set(e.parentElement.parentElement, e.getAttribute("data-slide"))
 		} catch (error) {
 			
 		}
@@ -98,7 +103,6 @@ const interval = setInterval(function() {
 		// Navigate to new slide
 		navigateCarouselToIndex(e, newIdx);
 
-		carouselIdxs.set(e, newIdx)
 		
 		
 	});
