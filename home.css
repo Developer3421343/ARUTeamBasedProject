@@ -28,6 +28,7 @@
 #hero-text-div {
   grid-column: 2;
   grid-row: 1 / 3; /* span both rows */
+  background-color: var(--primary-colour);
 }
 
 #hero-section > * {
