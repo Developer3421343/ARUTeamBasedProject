@@ -26,23 +26,30 @@ document.querySelectorAll(".carousel-nav-button").forEach((e) => {
 		// Clamp index in range
 		newIdx = Math.max(Math.min(newIdx, maxIdx), 0);
 
-		// Set new value
-		carouselIdxs.set(e.parentElement, newIdx);
-
 		// Navigate to image
 		navigateCarouselToIndex(e.parentElement, newIdx);
+
+		// Set new value
+		carouselIdxs.set(e.parentElement, newIdx);
 	});
 });
 
 function navigateCarouselToIndex(carousel, index) {
-    // Change image
+    let oldElement = carousel.querySelectorAll(".carousel-img-div")[carouselIdxs.get(carousel)];
+	console.log(carouselIdxs[carousel]);
+	// Change image
 	let newElement = carousel.querySelectorAll(".carousel-img-div")[index];
 	newElement.classList.add("visible");
+	oldElement.classList.add("leaving");
 	carousel.querySelectorAll(".carousel-img-div").forEach((e) => {
 		if (e != newElement) {
 			e.classList.remove("visible");
 		}
 	});
+
+	setTimeout(() => {
+	 oldElement.classList.remove("leaving");
+	}, 950); 
 
     // Change dot
     let dotDiv = carousel.querySelectorAll(".carousel-dot-div")[0];
@@ -61,6 +68,7 @@ document.querySelectorAll(".carousel-dot").forEach((e) => {
 			console.log(e.parentElement.parentElement);
 			console.log(e.getAttribute("data-slide"));
 			navigateCarouselToIndex(e.parentElement.parentElement, e.getAttribute("data-slide"));
+			carouselIdxs.set(e.parentElement.parentElement, e.getAttribute("data-slide"))
 		} catch (error) {
 			
 		}
@@ -87,10 +95,12 @@ const interval = setInterval(function() {
 		// Increment and clamp index in range
 		newIdx = Math.max(Math.min(newIdx, maxIdx), 0);
 
-		carouselIdxs.set(e, newIdx)
-		
 		// Navigate to new slide
 		navigateCarouselToIndex(e, newIdx);
+
+		carouselIdxs.set(e, newIdx)
+		
+		
 	});
 	
  }, 7000);
