@@ -16,7 +16,7 @@ document.querySelectorAll(".carousel-nav-button").forEach((e) => {
 			navAmount = 1;
 		}
 
-		let maxIdx = e.parentElement.querySelectorAll(".carousel-img-div").length - 1;
+		let maxIdx = e.parentElement.querySelectorAll(".carousel-img").length - 1;
 
 		let oldIdx = carouselIdxs.get(e.parentElement);
 
@@ -40,15 +40,15 @@ document.querySelectorAll(".carousel-nav-button").forEach((e) => {
 
 function navigateCarouselToIndex(carousel, index) {
 	if (!carouselBusy.get(carousel)){
-		carousel.querySelectorAll(".carousel-number-div")[0].innerHTML = `${index + 1} / ${carousel.querySelectorAll(".carousel-img-div").length}`;
+		carousel.querySelectorAll(".carousel-number-div")[0].innerHTML = `${index + 1} / ${carousel.querySelectorAll(".carousel-img").length}`;
 		carouselBusy.set(carousel, true);
-		let oldElement = carousel.querySelectorAll(".carousel-img-div")[carouselIdxs.get(carousel)];
+		let oldElement = carousel.querySelectorAll(".carousel-img")[carouselIdxs.get(carousel)];
 		carouselIdxs.set(carousel, index);
 		// Change image
-		let newElement = carousel.querySelectorAll(".carousel-img-div")[index];
+		let newElement = carousel.querySelectorAll(".carousel-img")[index];
 		newElement.classList.add("visible");
 		oldElement.classList.add("leaving");
-		carousel.querySelectorAll(".carousel-img-div").forEach((e) => {
+		carousel.querySelectorAll(".carousel-img").forEach((e) => {
 			if (e != newElement) {
 				e.classList.remove("visible");
 			}
@@ -91,7 +91,7 @@ const interval = setInterval(function() {
 		let currentIdx = carouselIdxs.get(e);
 
 		// Max slide index
-		let maxIdx = e.parentElement.querySelectorAll(".carousel-img-div").length - 1;
+		let maxIdx = e.parentElement.querySelectorAll(".carousel-img").length - 1;
 
 		let newIdx = currentIdx + 1;
 

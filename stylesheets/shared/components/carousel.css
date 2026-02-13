@@ -38,31 +38,23 @@
     left: 30px;
 }
 
-.carousel-img-div {
+.carousel-img {
     width: 100%;
     height: 100%;
     position: absolute;
     visibility: hidden;
-}
-
-.carousel-img-div.visible {
-    visibility: visible;
-}
-
-.carousel-img {
-    width: 100%;
-    height: 100%;
     object-fit: cover;    
-    transform: translateX(-100%);
+    transform: translateX(-150%);
     transition: transform 900ms linear;
 }
 
-.carousel-img-div.visible .carousel-img {
-    transform: translateX(0);
+.carousel-img.visible  {
+    transform: translateX(-50%);
+    visibility: visible;
 }
 
-.carousel-img-div.leaving .carousel-img {
-    transform: translateX(100%);
+.carousel-img.leaving {
+    transform: translateX(50%);
     visibility: visible;
 }
 
