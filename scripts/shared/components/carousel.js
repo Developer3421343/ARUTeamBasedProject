@@ -24,7 +24,9 @@ document.querySelectorAll(".carousel-nav-button").forEach((e) => {
 
 		if (newIdx > maxIdx) {
 			newIdx = 0;
-		}
+		} else if (newIdx < 0) {
+            newIdx = maxIdx;
+        }
 
 		// Clamp index in range
 		newIdx = Math.max(Math.min(newIdx, maxIdx), 0);
@@ -38,6 +40,7 @@ document.querySelectorAll(".carousel-nav-button").forEach((e) => {
 
 function navigateCarouselToIndex(carousel, index) {
 	if (!carouselBusy.get(carousel)){
+		carousel.querySelectorAll(".carousel-number-div")[0].innerHTML = `${index + 1} / ${carousel.querySelectorAll(".carousel-img-div").length}`;
 		carouselBusy.set(carousel, true);
 		let oldElement = carousel.querySelectorAll(".carousel-img-div")[carouselIdxs.get(carousel)];
 		carouselIdxs.set(carousel, index);
@@ -94,7 +97,9 @@ const interval = setInterval(function() {
 
 		if (newIdx > maxIdx) {
 			newIdx = 0;
-		}
+		} else if (newIdx < 0) {
+            newIdx = maxIdx;
+        }
 
 
 		// Increment and clamp index in range
