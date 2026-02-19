@@ -21,7 +21,6 @@ body {
     float: left;
     height: calc(var(--header-height) - 2 * var(--logo-div-margin));
     margin: var(--logo-div-margin);
-    background-color: yellow;
     display: flex;
     flex-direction: row;
     padding-right: 10px;
@@ -39,7 +38,8 @@ body {
     margin: 0;
     line-height: calc((var(--header-height) - 2 * var(--logo-div-margin)) / 3); /*One third of logo height*/
     font-size: 27px;
-    margin-left: 5px;
+    margin-left: 15px;
+    color: var(--primary-contrast);
 }
 
 #sign-in-div {
@@ -52,7 +52,10 @@ body {
     display: flex;
     align-items: center;
     padding-left: var(--sign-in-text-inline-gap);
-    background-color: yellow;
+    background-color: var(--secondary-colour);
+    padding: 0 7.5px 0 15px;
+    outline: 1px solid black;
+    border-radius: 10px;
 }
 
 #sign-in-div > label {
@@ -60,8 +63,8 @@ body {
 }
 
 #sign-in-image {
-    height: calc(var(--header-height) - 2 * var(--sign-in-margin));
-    width: calc(var(--header-height) - 2 * var(--sign-in-margin));
+    height: calc(var(--header-height) - 2 * var(--sign-in-margin) - 15px);
+    width: calc(var(--header-height) - 2 * var(--sign-in-margin) - 15px);
     margin-left: var(--sign-in-text-inline-gap);
 }
 
