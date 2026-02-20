@@ -1,65 +1,11 @@
-const header = document.createElement("header");
+const header = document.createElement("header") 
 
-header.innerHTML = `
-<div id="logo-div">
-    <img src="images/common/logo.png" id="header-logo" alt="Company logo" />
-    <p>One
-And
-Done
-    </p>
-</div>
-<nav id="header-dropdown-div">
-    <div id="header-dropdown-menu">
-        <button aria-haspopup="true" aria-expanded="false" aria-controls="dropdown-a" data-id="a" >Menu 1</button>
-        <button aria-haspopup="true" aria-expanded="false" aria-controls="dropdown-b" data-id="b" >Menu 2</button>
-        <button aria-haspopup="true" aria-expanded="false" aria-controls="dropdown-c" data-id="c" >Menu 3</button>
-    </div>
-
-    <div id="header-dropdown-content">
-        <ul id="dropdown-a" data-id="a" class="has-header" role="menu" aria-label="Dropdown A">
-            <li><strong>Header</strong></li>
-            <li><a href="#" role="menuitem" tabindex="0">Item 1A</a></li>
-            <li><a href="#" role="menuitem" tabindex="0">Item 1B</a></li>
-            <li><a href="#" role="menuitem" tabindex="0">Item 1C</a></li>
-            <li><a href="#" role="menuitem" tabindex="0">Item 1D</a></li>
-        </ul>
-        <div id="dropdown-b" data-id="b" role="menu" aria-label="Dropdown B"> 
-            <ul class="has-header" role="menu" aria-label="Submenu 1">
-                <li><strong>Header</strong></li>
-                <li><a href="#" role="menuitem" tabindex="0">Item 3A</a></li>
-                <li><a href="#" role="menuitem" tabindex="0">Item 3B</a></li>
-            </ul>
-            <ul class="has-header" role="menu" aria-label="Submenu 2">
-                <li><strong>Header</strong></li>
-                <li><a href="#" role="menuitem" tabindex="0">Item 4A</a></li>
-                <li><a href="#" role="menuitem" tabindex="0">Item 4B</a></li>
-            </ul>
-            <ul class="has-header" role="menu" aria-label="Submenu 3">
-                <li><strong>Header</strong></li>
-                <li><a href="#" role="menuitem" tabindex="0">Item 4A</a></li>
-                <li><a href="#" role="menuitem" tabindex="0">Item 4B</a></li>
-            </ul>
-        </div>
-        <div id="dropdown-c" data-id="c" role="menu" aria-label="Dropdown C"> 
-            <ul class="has-header" role="menu" aria-label="Submenu 1">
-                <li><strong>Header</strong></li>
-                <li><a href="# role="menuitem" tabindex="0"">Item 3A</a></li>
-                <li><a href="# role="menuitem" tabindex="0"">Item 3B</a></li>
-            </ul>
-            <ul class="has-header" role="menu" aria-label="Submenu 2">
-                <li><strong>Header</strong></li>
-                <li><a href="# role="menuitem" tabindex="0">Item 4A</a></li>
-                <li><a href="# role="menuitem" tabindex="0">Item 4B</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
-<div id="sign-in-div">
-    <label for="sign-in-button">Sign in</label>
-    <img src="images/common/sign-in.png" id="sign-in-image" alt="" />
-</div>`;
-
-document.body.prepend(header);
+fetch('/templates/header.html')
+      .then(response => response.text())
+      .then(data => {
+        header.innerHTML = data;
+        document.body.prepend(header);
+});
 
 document.querySelectorAll("#header-dropdown-menu [data-id]").forEach((el) => {
 	["mouseover", "focus"].forEach((evt) =>
@@ -79,3 +25,83 @@ document.querySelectorAll("#header-dropdown-menu [data-id]").forEach((el) => {
         })
     );
 });
+
+
+///// Keyboard navigability for header dropdown
+// Map creation
+const headerNavElements = new Map();
+
+Array.from(document.getElementById("header-dropdown-menu").children).forEach((menuHeader) => {
+    
+    let target = document.getElementById(menuHeader.getAttribute('aria-controls'));
+    
+    switch (target.tagName) {
+        case "DIV":
+            let submenus = [];
+
+            Array.from(target.children).forEach((ul) => {
+                submenus.push(Array.from(ul.querySelectorAll("a")));
+            });
+
+            headerNavElements.set(menuHeader, submenus);
+            break;
+
+        case "UL":
+            headerNavElements.set(menuHeader, [target.querySelectorAll("a")]);            
+            break;
+
+        default:
+            break;
+    }
+
+});
+// Navigation handling
+document.getElementById("header-dropdown-div").addEventListener("keydown", (e) => {
+    let x = 0;
+    let y = 0;
+
+    switch (e.key) {
+        case "ArrowUp":
+            y = 1;
+            break;
+        case "ArrowDown":
+            y = -1;
+            break;
+        case "ArrowLeft":
+            x = -1;
+            break;
+        case "ArrowRight":
+            x = 1;
+            break;
+        default:
+            break;
+    }
+
+    if (["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(e.key)) {
+        const topMenuElements = Array.from(headerNavElements.keys());
+        let newSubMenuIdx;
+        let newSubMenuItemIdx;
+        
+
+        // If target is in top menu handle naviagtion appropriatley
+        if (topMenuElements.includes(e.target)) {
+            // Get current top menu index
+            let currTopMenuIdx = 0;
+            for (let i = 0; i < topMenuElements.length; i++) {
+                if (topMenuElements[i].getAttribute("aria-expanded") == "true") {
+                    currTopMenuIdx = i;
+                    break;
+                }
+            }
+
+            // Focus new element
+            topMenuElements[clamp(currTopMenuIdx + x, 0, topMenuElements.length-1)].focus();
+        } else { // Else target is in dropdown content handle naviagtion appropriatley
+            //
+        }
+    }
+});
+
+function clamp(number, min, max) {
+  return Math.max(min, Math.min(number, max));
+}

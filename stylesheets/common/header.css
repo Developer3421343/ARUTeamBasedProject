@@ -1,11 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+:root {
+    --header-height: 110px;
+}
 
 header {
-    --header-height: 110px;
     position: sticky;
-    background-color: red;
+    background-color: var(--primary-colour);
     height: var(--header-height);
-    width: 100dvw;
+    width: 100%;
+    z-index: 100;
+    box-shadow: 0 1px 0 #000;
 }
 
 body {
@@ -18,7 +21,6 @@ body {
     float: left;
     height: calc(var(--header-height) - 2 * var(--logo-div-margin));
     margin: var(--logo-div-margin);
-    background-color: yellow;
     display: flex;
     flex-direction: row;
     padding-right: 10px;
@@ -32,12 +34,12 @@ body {
 
 
 #logo-div p {
-    font-family: "Roboto", sans-serif;
     white-space-collapse: preserve;
     margin: 0;
     line-height: calc((var(--header-height) - 2 * var(--logo-div-margin)) / 3); /*One third of logo height*/
     font-size: 27px;
-    margin-left: 5px;
+    margin-left: 15px;
+    color: var(--primary-contrast);
 }
 
 #sign-in-div {
@@ -50,8 +52,10 @@ body {
     display: flex;
     align-items: center;
     padding-left: var(--sign-in-text-inline-gap);
-    font-family: "Roboto", sans-serif;
-    background-color: yellow;
+    background-color: var(--secondary-colour);
+    padding: 0 7.5px 0 15px;
+    outline: 1px solid black;
+    border-radius: 10px;
 }
 
 #sign-in-div > label {
@@ -59,8 +63,8 @@ body {
 }
 
 #sign-in-image {
-    height: calc(var(--header-height) - 2 * var(--sign-in-margin));
-    width: calc(var(--header-height) - 2 * var(--sign-in-margin));
+    height: calc(var(--header-height) - 2 * var(--sign-in-margin) - 15px);
+    width: calc(var(--header-height) - 2 * var(--sign-in-margin) - 15px);
     margin-left: var(--sign-in-text-inline-gap);
 }
 
@@ -74,7 +78,6 @@ body {
     width: var(--header-nav-width);
     height: var(--header-nav-height);
     display: inline-block;
-    font-family: "Roboto", sans-serif;
 }
 
 #header-dropdown-content {
@@ -85,7 +88,6 @@ body {
     min-width: 100%;
     min-height: 100px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
     box-sizing: border-box;
     padding: 20px;
     border-radius: 0 0 var(--header-dropdown-radius) var(--header-dropdown-radius);
@@ -115,10 +117,11 @@ div.header-dropdown-show {
     display: flex;
     flex-direction: row;
     height: 100%;
+    font-family: var(--header-font-family);
 }
 
 #header-dropdown-menu > *:hover, #header-dropdown-menu > *:focus {
-    background-color: gainsboro;
+    background-color: var(--secondary-hover);
 }
 
 #header-dropdown-menu > *:first-of-type {
@@ -135,6 +138,7 @@ div.header-dropdown-show {
     font-size: 1.15rem;
     border: 1px solid black;
     border-collapse: collapse;
+    background-color: var(--secondary-colour);
 }
 
 #header-dropdown-content > div > * {
@@ -149,14 +153,21 @@ div.header-dropdown-show {
 #header-dropdown-content li > strong {
     color: black;
     font-size: 1.1rem;
+    font-family: var(--header-font-family);
 }
 
 #header-dropdown-content  *.has-header li:last-of-type:before {
     content: " └ ";
     color: black;
+    font-family: monospace;
 }
 
 #header-dropdown-content  *.has-header li:not(:last-of-type):not(:first-of-type):before {
     content: " ├ ";
     color: black;
+    font-family: monospace;
+}
+
+#header-dropdown-content li {
+    line-height: 1.18rem;
 }

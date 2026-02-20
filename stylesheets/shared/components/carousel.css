@@ -1,0 +1,115 @@
+.carousel {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-nav-button {
+    position: absolute;
+    top: calc(50% - 65px);
+    width: 70px;
+    height: 130px;
+    background-color:rgba(0, 0, 0, 0.75);
+    border: none;
+    border-radius: 10px;
+    z-index: 10;
+    font-size: 50px;
+    font-stretch: condensed;
+    cursor: pointer;
+}
+
+.carousel-nav-button span {
+    display: inline-block;
+    transform: scale(1,3);
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+}
+
+.carousel-nav-button:hover {
+    background-color: rgba(64, 64, 64, 1);
+}
+
+.carousel-nav-button.right {
+    right: 30px;
+}
+
+.carousel-nav-button.left {
+    left: 30px;
+}
+
+.carousel-img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    visibility: hidden;
+    object-fit: cover;    
+    transform: translateX(50%);
+    transition: transform 900ms linear;
+}
+
+.carousel-img.visible  {
+    transform: translateX(-50%);
+    visibility: visible;
+}
+
+.carousel-img.leaving {
+    transform: translateX(-150%);
+    visibility: visible;
+}
+
+
+.carousel-number-div {
+    z-index: 10;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 50px;
+    background-color:rgba(255, 255, 255, 0.6);
+    padding: 3px 10px;
+    border-radius: 8px;
+    user-select: none;
+}
+
+.carousel-number-div:hover {
+    background-color:rgba(255, 255, 255, 1);
+}
+
+.carousel-dot-div {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    /* Removes space between elements */
+    display: flex;
+}
+
+.carousel-dot {
+    border: none;
+    width:  25px;
+    height: 25px;
+    border-radius: 100%;
+    position: relative;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.carousel-dot::before {
+    background-color: lightgray;
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width:  19px;
+    height: 19px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.carousel-dot.selected::before {
+    background-color: dimgray;
+}
+
+.carousel-dot:hover:not(.selected)::before {
+    background-color: darkgray;
+}
