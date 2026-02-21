@@ -1,0 +1,14 @@
+.breadcrumb > * {
+    display: inline-block;
+}
+
+.breadcrumb > *:not(:last-of-type)::after {
+    content: "  > ";
+    white-space-collapse: preserve;
+}
+
+.breadcrumb {
+    margin: 15px;
+    color: black;
+    font-size: 1.2rem;
+}

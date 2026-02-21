@@ -21,6 +21,24 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--header-font-family);
+    margin-left: 20px;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2.25rem;
+}
+
+h3 {
+    font-size: 1.75rem;
+}
+
+p {
+    margin-left: 20px;
+    font-size: 1.25rem;
 }
 
 *, *::before, *::after {
