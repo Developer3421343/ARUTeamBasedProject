@@ -33,7 +33,7 @@ const headerNavElements = new Map();
 
 function postHeaderLoad() {
     Array.from(document.getElementById("header-dropdown-menu").children).forEach((menuHeader) => {
-
+        
         let target = document.getElementById(menuHeader.getAttribute('aria-controls'));
 
         switch (target.tagName) {
