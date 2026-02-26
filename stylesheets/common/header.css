@@ -26,6 +26,12 @@ body {
     padding-right: 10px;
 }
 
+#logo-div a {
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+}
+
 #header-logo {
     height: calc(var(--header-height) - 2 * var(--logo-div-margin));
     width: calc(var(--header-height) - 2 * var(--logo-div-margin));
