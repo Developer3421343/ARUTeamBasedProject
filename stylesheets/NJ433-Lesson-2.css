@@ -1,0 +1,6 @@
+table, th, td{
+    border: 1px solid Green;
+    padding: 10px;
+    text-align: left;
+}
+
