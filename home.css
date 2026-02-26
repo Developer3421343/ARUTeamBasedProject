@@ -88,3 +88,9 @@
 #sign-in-text-div > p {
   margin: 5px 0 0 0;
 }
+
+#hero-text-div {
+  font-size: 1.25rem;
+  color: var(--primary-contrast);
+  padding: 50px;
+}
