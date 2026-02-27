@@ -1,0 +1,45 @@
+.breadcrumb {
+    position: absolute;
+}
+
+main {
+    padding-bottom: 50px;
+}
+
+h1 {
+    text-align: center;
+    text-decoration: underline;
+    margin-bottom: 0;
+}
+
+.center {
+    text-align: center;
+}
+
+#contact-us-chips {
+    display: flex;
+    justify-content: space-around;
+}
+
+#contact-us-chips .chip {
+    width: 250px;
+    height: 500px;
+    background-color: var(--primary-colour);
+    border-radius: 15px;
+    padding: 25px 15px;
+    color: var(--primary-contrast);
+}
+
+#contact-us-chips .chip b {
+    font-family: var(--header-font-family);
+    color: var(--secondary-colour);
+    text-align: center;
+    width: 100%;
+    display: inline-block;
+    font-size: 1.5rem;
+}
+
+#contact-us-chips .chip.big {
+    width: 625px;
+    height: 300px;
+}
