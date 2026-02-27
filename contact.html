@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LESSON NAME HERE | One and Done</title>       <!-- INSERT LESSON NAME -->
+    <title>LESSON NAME HERE | One and Done</title> <!-- INSERT LESSON NAME -->
     <!-- Header -->
     <script src="/scripts/common/header.js" defer></script>
     <link rel="stylesheet" href="/stylesheets/common/header.css">
@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="/stylesheets/common/footer.css">
     <!-- Branding -->
     <link rel="stylesheet" href="/stylesheets/common/branding.css">
-    
+
     <link rel="stylesheet" href="/stylesheets/contact.css">
 </head>
 
@@ -27,29 +27,65 @@
         </nav>
         <main>
             <h1>Contact us</h1>
-            <p class="center">Please don't hesitate to get in contact with us! we would love to hear your suggestions on how the website can be improved!</p>
+            <p class="center">Please don't hesitate to get in contact with us! we would love to hear your suggestions on
+                how the website can be improved!</p>
             <section id="contact-us-chips">
                 <div class="chip">
                     <b>For content to add...</b>
-                    <p>If you have any suggestion or ideas for some content you think we should be covering please send us a message and we will do our best to accommodate your requests!</p>
+                    <p>If you have any suggestion or ideas for some content you think we should be covering please send
+                        us a message and we will do our best to accommodate your requests!</p>
                 </div>
                 <div class="chip">
                     <b>If you find any bugs/content errors...</b>
-                    <p>If you find anything wrong with our website, be that functionality or if we are putting out incorrect information please let us know and we will endeavour to fix it ASAP!</p>
+                    <p>If you find anything wrong with our website, be that functionality or if we are putting out
+                        incorrect information please let us know and we will endeavour to fix it ASAP!</p>
                 </div>
-                <div class="chip big">
-                    <b>What to expect when you contact us.</b>
-                    <p>Here at One And Done we really do value your input. We are constantly striving to improve the user experience and effectiveness of the website for you. However, sometimes even we run out of ideas and struggle to know where to go next, and sometimes with all we have going on we regrettably miss things. That's why your input is so important to us!
+                <div id="center-chip-div">
+                    <div class="chip big">
+                        <b>What to expect when you contact us.</b>
+                        <p>Here at One And Done we really do value your input. We are constantly striving to improve the
+                            user experience and effectiveness of the website for you. However, sometimes even we run out
+                            of ideas and struggle to know where to go next, and sometimes with all we have going on we
+                            regrettably miss things. That's why your input is so important to us!
 
-Though our team is busy we try and reply to all enquiries and messages within 48 hours of receiving your message!</p>
+                            Though our team is busy we try and reply to all enquiries and messages within 48 hours of
+                            receiving your message!</p>
+                    </div>
+                    <form id="contact-form" action="">
+                        <b>Contact us</b><br><br>
+
+                        <label for="reason">Reason for contact: </label>
+                        <select name="reason" id="reason">
+                            <option value="">--Please choose an option--</option>
+                            <option value="content">Content to add</option>
+                            <option value="bugs">Bugs/content errors</option>
+                            <option value="accessibility">Accessibility issues/additions</option>
+                            <option value="general">General enquiries</option>
+                        </select><br><br>
+
+                        <label for="name">Name:</label><br>
+                        <input type="text" id="name" name="name" placeholder="Name"><br><br>
+
+                        <label for="email">Email:</label><br>
+                        <input type="email" id="email" name="email" placeholder="example@domain.com"><br><br>
+
+                        <label for="message">Your message:</label><br>
+                        <textarea name="message" id="message"></textarea><br><br>
+
+
+                        <input type="submit" value="Submit">
+                    </form>
                 </div>
                 <div class="chip">
                     <b>For accessibility additions...</b>
-                    <p>At One And Done accessibility is of paramount importance to us, so if you notice something we have missed on our mission to make the website equally accessible for everyone let us know immediately and we will make it top of our list to implement</p>
+                    <p>At One And Done accessibility is of paramount importance to us, so if you notice something we
+                        have missed on our mission to make the website equally accessible for everyone let us know
+                        immediately and we will make it top of our list to implement</p>
                 </div>
                 <div class="chip">
                     <b>For general enquiries...</b>
-                    <p>If you have any questions or have anything you would like to voice to our team here at One And Done, please send us an email and we will get back to you at the earliest opportunity.</p>
+                    <p>If you have any questions or have anything you would like to voice to our team here at One And
+                        Done, please send us an email and we will get back to you at the earliest opportunity.</p>
                 </div>
             </section>
         </main>
