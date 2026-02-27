@@ -43,7 +43,7 @@ h1 {
 .person-chip .name {
     width: 100%;
     text-align: center;
-    font-size: 25px;
+    font-size: 1.5rem;
     font-weight: bold;
     color: var(--secondary-colour);
     font-family: var(--header-font-family);
