@@ -38,3 +38,10 @@ h1{
 .container:hover .overlay {
     opacity: 1; /* Show overlay text on hover */
 }
+
+p.solid {
+    border-style: solid;
+        padding: 5px;
+        width: 950px; 
+        color: green;
+}

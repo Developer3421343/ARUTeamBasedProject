@@ -3,7 +3,9 @@ h1{
 }
 
 table, th, td{
-    border: 1px solid black;
+    border: 3px solid rgb(212, 0, 255);
+    padding: 10px;
+    text-align: center;
 }
 
 p.solid {
@@ -15,4 +17,6 @@ p.solid {
 
 img[src*="Primenumbers1-100.png"] {
     filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.979)) sepia(75%) hue-rotate(100deg);
+    display: block;
+    margin: auto;
 }
