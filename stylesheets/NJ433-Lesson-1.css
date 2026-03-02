@@ -20,3 +20,45 @@ img[src*="Primenumbers1-100.png"] {
     display: block;
     margin: auto;
 }
+
+.prime-table {
+    border-collapse: collapse;
+    width: 50%;
+    margin: 20px 0;
+}
+
+.prime-table th, .primetable td {
+    border: 1px solid black;
+    padding: 12px;
+    text-align: center;
+    background-color: gold;
+    text-align: center;
+
+
+}
+
+.prime-table td:last-child{
+    font-weight: bold;
+}
+
+
+.answer{
+    background-color: grey;
+    color: grey;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    padding: 0 5px;
+}
+
+.answer:hover {
+    background-color: rgb(86, 86, 226);
+    color: yellow;
+}
+
+.key-points {
+    background-color: #fff9c4;
+    border-left: 10px solid gold;
+    padding: 5px;
+    margin: 25px 0;
+}
