@@ -1,3 +1,21 @@
+/*body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h3 {
+    margin-top: 40px;
+}
+
+*/
+
 .powers-table{
     border: 2px solid blueviolet;
     border-collapse: collapse;
@@ -48,7 +66,7 @@ h1{
     bottom: 0;
     background: rgba(0, 89, 255, 0.5); 
     color: #f1f1f1;
-    width: 47%;
+    width: 50%;
     color: white;
     font-size: 12px;
     text-align: center;
@@ -65,4 +83,18 @@ p.solid {
         padding: 5px;
         width: 950px; 
         color: green;
+}
+
+.answer{
+    background-color: grey;
+    color: grey;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    padding: 0 5px;
+}
+
+.answer:hover {
+    background-color: rgb(86, 86, 226);
+    color: yellow;
 }
