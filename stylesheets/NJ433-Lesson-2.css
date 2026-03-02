@@ -1,7 +1,28 @@
-table, th, td{
-    border: 1px solid Green;
+.powers-table{
+    border: 2px solid blueviolet;
+    border-collapse: collapse;
+    width: 40%;
+    margin-bottom: 20px;
+}
+
+.powers-table th, td{
+    border: 3px solid rgb(132, 0, 255);
     padding: 10px;
-    text-align: left;
+    text-align: center;
+    color: rgb(255, 0, 0);
+}
+
+.square-roots-table{
+    border: 2px solid orangered;
+    border-collapse: collapse;
+    width: 40%;
+    margin-bottom: 20px;
+}
+.square-roots-table th, td{
+    border: 3px solid orangered;
+    padding: 10px;
+    text-align: center;
+    color: rgb(21, 109, 21);
 }
 
 h1{
