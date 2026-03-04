@@ -11,6 +11,24 @@ await loadCSS();
 class QuizElement extends HTMLElement {
 	constructor() {
 		super();
+
+    class Question {
+      constructor(title, answers, correctIdx) {
+        this.title = title;
+        this.answers = answers;
+        this.correctIdx = correctIdx;
+      }
+    }
+
+    // Parse questions
+    let questions = []
+    Array.from(element.children).filter((x) => x.tagName == "UL").forEach(child => {
+      let title = child.getAttribute("data-title") ?? "";
+      let answers = Array.from(child.children).map((x) => x.innerHTML)
+      let correctIdx = Array.from(child.children) .findIndex(el => el.dataset.correct === "true");
+      questions.push(new Question(title, answers, correctIdx));
+    });
+
 		const shadow = this.attachShadow({ mode: "open" });
 
 		shadow.adoptedStyleSheets = [sheet];
@@ -41,7 +59,7 @@ class QuizElement extends HTMLElement {
             <label for="css">CSS</label><br>
             <input type="radio" id="javascript" name="fav_language" value="JavaScript">
             <label for="javascript">JavaScript</label>
-        `;
+        `;    
 	}
 }
 

@@ -21,7 +21,18 @@
     <div class="content">
         <main>
             <!-- ALL HTML GOES HERE IN THESE MAIN TAGS -->
-            <quiz-element></quiz-element>
+            <quiz-element>
+                <ul data-title="testq"> <!-- Optional question title, leave blank if omitting -->
+                    <li>HTML</li>
+                    <li data-correct="true">CSS</li>
+                    <li>JS</li>
+                </ul>
+                <ul data-title="aaa"> <!-- Optional question title, leave blank if omitting -->
+                    <li data-correct="true">a</li>
+                    <li>b</li>
+                    <li>c</li>
+                </ul>
+            </quiz-element>
         </main>
     </div>
 </body>
