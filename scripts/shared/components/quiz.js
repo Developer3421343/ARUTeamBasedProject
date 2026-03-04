@@ -36,9 +36,13 @@ class QuizElement extends HTMLElement {
 
 		const shadow = this.attachShadow({ mode: "open" });
 
+    let title = (this.getAttribute("data-title") ?? "");
+
+    title = title != "" ? title : "Quiz";
+
 		shadow.adoptedStyleSheets = [sheet];
 		shadow.innerHTML = `
-            <b class="quiz-title">Quiz</b>
+            <b class="quiz-title">${title}</b>
             
             <div id="score-div">
               <p>Current score: 0/30</p>
