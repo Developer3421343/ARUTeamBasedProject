@@ -6,5 +6,32 @@ body {
 html{
 scroll-behavior: smooth;
 
-
 }
+
+div.ex1 {
+  width: 1000px;
+  padding: 25px;
+  background-color: lightblue;
+}
+div.ex2 {
+  width : 1000px;
+  padding-left: 30px;
+  background-color:bisque
+}
+div.ex3 {
+  width : 1000px;
+  padding-left: 30px;
+  background-color:rgb(255, 196, 208)
+}
+div.ex4 {
+  width : 1000px;
+  padding-left: 30px;
+  background-color:rgb(227, 196, 255)
+}
+div.ex5 {
+  width : 1000px;
+  padding-left: 30px;
+  background-color:gray
+}
+
+
