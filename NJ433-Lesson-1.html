@@ -17,6 +17,10 @@
     <link rel="stylesheet" href="/stylesheets/shared/lessons.css">
     <link rel="stylesheet" href="/stylesheets/NJ433-Lesson-1.css">
     <link rel="icon" type="image/x-icon" href="/images/1squared.png">
+    <script type="module" src="/scripts/shared/components/quiz.js"></script>
+    <script src="/scripts/NJ433-Lesson-1.js" defer></script>
+
+
 
 </head>
 
@@ -85,12 +89,39 @@
                         </tr>
                 </table>
             </section>
+
+            <button id="is-it-a-prime-btn">Is it a prime</button>
+            <input id ="is-it-a-prime-input" type="text" />
+            <b id="is-it-a-prime-output"></b>
+
+
+
+
             <p> Prime Numbers Quiz</p>
                 <p> 1. Is 53 a prime number?<br> Answer: <span class="answer">Yes</span></p>
                 <p> 2. Is 223 a prime number?<br> Answer:  <span class="answer">Yes</span></p>
                 <p> 3. List the Prime Numbers between 50 and 60?<br> Answer:  <span class="answer">53, 59</span></p>
                 <p> 4. Which of the following is a prime number?<br> 13, 15, 21<br> Answer: <span class="answer">13</span></p>
                 <p> 5. How many prime numbers are there between 10 and 25?<br> 5, 4, 7<br> Answer: <span class="answer">5</span></p> 
+<!--
+            <quiz-element data-title="Prime Numbers Quiz">
+                <ul data-title="Is 53 a prime number?">
+                    <li data-correct="true">Yes</li>
+                    <li>No</li>
+                </ul>
+                <ul data-title="Is 223 a prime number?">
+                    <li data-correct="true">Yes</li>
+                    <li>No</li>
+                </ul>
+                <ul data-title="List the Prime Numbers between 50 and 60?">
+                    <li>51, 53, 55, 57, 59</li>
+                    <li data-correct="true">53, 59</li>
+                    <li>50, 52, 54, 56, 58</li>
+                </ul>
+            </quiz-element>
+
+            <br><br>
+        -->
     
         <!--
             of the key points to remember is that it must be a whole number, 1 is NOT a prime number because it only has itself. only 2 divisors. -->
