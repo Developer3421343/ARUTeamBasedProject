@@ -15,5 +15,5 @@ document.getElementById("is-it-a-prime-btn").addEventListener("click", () => {
     if ([0, 1].includes(input)) prime = false;
 
 
-    document.getElementById("is-it-a-prime-output").textContent = prime ? input + " is a prime number." : input + " is not a prime number.";
+    document.getElementById("is-it-a-prime-output").textContent = prime ? input + " is a prime number!" : input + " is not a prime number!";
 });
