@@ -17,7 +17,7 @@ p.solid {
 
 img[src*="Primenumbers1-100.png"] {
     filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.979)) sepia(75%) hue-rotate(100deg);
-        display: block;
+    display: block;
     margin-left: auto;
     margin-right: auto;
 }
@@ -28,15 +28,14 @@ img[src*="Primenumbers1-100.png"] {
     margin: 20px 0;
 }
 
-.prime-table th, .prime-table td {
+.prime-table th, .primetable td {
     border: 1px solid black;
     padding: 12px;
     text-align: center;
-    background-color: lightgoldenrodyellow;
+    background-color: gold;
     text-align: center;
-
-
 }
+
 
 .prime-table td:last-child{
     font-weight: bold;
