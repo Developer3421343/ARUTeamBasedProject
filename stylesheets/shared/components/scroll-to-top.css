@@ -16,4 +16,9 @@
     color: var(--secondary-colour);
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     cursor: pointer;
+    transition: right 0.5s;
+}
+
+:host(.hidden) {
+    right: -63px;
 }
