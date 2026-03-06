@@ -1,0 +1,50 @@
+p.solid {border-style: solid;}
+
+body {
+  background-color: white;
+}
+html{
+scroll-behavior: smooth;
+
+}
+
+div.ex1 {
+  width: 1000px;
+  padding: 25px;
+  background-color: rgb(9, 180, 237);
+}
+div.ex2 {
+  width: 700px;
+  padding: 25px;
+  background-color: rgb(114, 135, 142);
+}
+div.ex3 {
+  width: 700px;
+  padding: 25px;
+  background-color: rgb(96, 107, 231);
+}
+div.ex4 {
+  width: 700px;
+  padding: 25px;
+  background-color: rgb(102, 244, 173);
+}
+div.ex5 {
+  width: 1000px;
+  padding: 25px;
+  background-color: rgb(239, 226, 103);
+}
+div.ex6 {
+  width: 1000px;
+  padding: 25px;
+  background-color: rgb(83, 207, 238);
+}
+div.ex7 {
+  width: 1000px;
+  padding: 25px;
+  background-color: rgb(244, 104, 197);
+}
+div.ex8 {
+  width: 1000px;
+  padding: 25px;
+  background-color: rgb(230, 120, 244);
+}
