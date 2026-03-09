@@ -2,11 +2,7 @@ h1{
     text-align: center;
 }
 
-table, th, td{
-    border: 3px solid rgb(212, 0, 255);
-    padding: 10px;
-    text-align: center;
-}
+
 
 p.solid {
     border-style: solid;
@@ -28,7 +24,7 @@ img[src*="Primenumbers1-100.png"] {
     margin: 20px 0;
 }
 
-.prime-table th, .primetable td {
+.prime-table th, .prime-table td {
     border: 1px solid black;
     padding: 12px;
     text-align: center;
@@ -44,7 +40,7 @@ img[src*="Primenumbers1-100.png"] {
 
 .answer{
     background-color: grey;
-    color: grey;
+    color: gray;
     cursor: pointer;
     transition: all 0.3s ease;
     border-radius: 4px;
@@ -61,6 +57,7 @@ img[src*="Primenumbers1-100.png"] {
     border-left: 10px solid gold;
     padding: 5px;
     margin: 25px 0;
+    border-radius: 5px;
 }
 
 .button {
@@ -95,4 +92,8 @@ img[src*="Primenumbers1-100.png"] {
 
 .image-overlay-container:hover .image-overlay-text {
     opacity: 1;
+}
+
+section{
+    margin: 20px;
 }
