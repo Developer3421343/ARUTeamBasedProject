@@ -19,6 +19,15 @@ class QuizElement extends HTMLElement {
 				this.correctIdx = correctIdx;
 			}
 		}
+		
+		class Answer {
+			constructor(title, correct) {
+				this.title = title;
+				this.correct = correct;
+			}
+			labelElem;
+			radioElem;
+		}
 
 		// Parse questions
 		let questions = [];
@@ -26,7 +35,7 @@ class QuizElement extends HTMLElement {
 			.filter((x) => x.tagName == "UL")
 			.forEach((child) => {
 				let title = child.getAttribute("data-title") ?? "";
-				let answers = Array.from(child.children).map((x) => x.innerHTML);
+				let answers = Array.from(child.children).map((x) => new Answer(x.innerHTML, (x.getAttribute("data-correct") ?? "").toLowerCase() == "true"));
 				let correctIdx = Array.from(child.children).findIndex((el) => el.dataset.correct === "true");
 				questions.push(new Question(title, answers, correctIdx));
 			});
@@ -37,8 +46,10 @@ class QuizElement extends HTMLElement {
 		const shadow = this.attachShadow({ mode: "open" });
 
     let title = (this.getAttribute("data-title") ?? "");
-
     title = title != "" ? title : "Quiz";
+
+    let answerVerif = (this.getAttribute("data-answer-verification") ?? "");
+    answerVerif = ["end", "each"].includes(answerVerif.toLowerCase()) ? answerVerif : "end";
 
 		shadow.adoptedStyleSheets = [sheet];
 		shadow.innerHTML = `
@@ -66,19 +77,69 @@ class QuizElement extends HTMLElement {
 			// Populate answers
 			for (let aIdx = 0; aIdx < q.answers.length; aIdx++) {
 				let a = q.answers[aIdx];
+
+				let radioElem = Object.assign(document.createElement("input"), {
+					type: "radio",
+					id: `radioset-q${i + 1}-a${aIdx + 1}`,
+					name: `radioset-q${i + 1}`,
+					className: "answer-radio",
+				});
+
+				let labelElem = Object.assign(document.createElement("label"), {
+					htmlFor: `radioset-q${i + 1}-a${aIdx + 1}`,
+					innerHTML: a.title,
+				});
+
 				shadow.append(
-					Object.assign(document.createElement("input"), {
-						type: "radio",
-						id: `radioset-q${i + 1}-a${aIdx + 1}`,
-						name: `radioset-q${i + 1}`,
-					}),
-					Object.assign(document.createElement("label"), {
-						htmlFor: `radioset-q${i + 1}-a${aIdx + 1}`,
-						innerHTML: a,
-					}),
+					radioElem,
+					labelElem,
 					document.createElement("br"),
 				);
+				
+				questions[i]["answers"][aIdx]["radioElem"] = radioElem;
+				questions[i]["answers"][aIdx]["labelElem"] = labelElem;
 			}
+
+			if (answerVerif == "each") {
+				// Add answer check button
+				shadow.append(
+					Object.assign(document.createElement("button"), {
+						className: "answer-button",
+						textContent: "Check answer",
+					}),
+				);
+			}
+		}
+
+		if (answerVerif == "end") {
+			// Create answer button
+			let answerButton = Object.assign(document.createElement("button"), {
+				className: "answer-button",
+				textContent: "Check answers",
+			});
+
+			answerButton.addEventListener("click", () => {
+				Array.from(shadow.querySelectorAll(".answer-radio")).forEach(element => {
+					element.setAttribute("disabled", "true")
+				});
+				console.log(questions);
+				questions.forEach((question) => {
+					question.answers.forEach((answer) => {
+						if (answer.correct) {
+							answer.labelElem.classList.add("correct");
+						} else if (!answer.correct && answer.radioElem.checked) {
+							answer.labelElem.classList.add("false");
+						}
+						
+					})
+				})
+			})
+
+			// Add answer check button
+			shadow.append(
+				document.createElement("hr"),
+				answerButton
+			);
 		}
 	}
 }

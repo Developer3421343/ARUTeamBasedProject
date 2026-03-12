@@ -33,3 +33,13 @@
     margin: 10px 0 0 0;
     width: 50%;
 }
+
+label.correct {
+    color: green;
+    font-weight: bold;
+}
+
+label.false {
+    color: red;
+    font-weight: bold;
+}
