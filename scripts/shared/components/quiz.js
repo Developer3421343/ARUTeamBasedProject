@@ -19,7 +19,7 @@ class QuizElement extends HTMLElement {
 				this.correctIdx = correctIdx;
 			}
 		}
-		
+
 		class Answer {
 			constructor(title, correct) {
 				this.title = title;
@@ -40,16 +40,16 @@ class QuizElement extends HTMLElement {
 				questions.push(new Question(title, answers, correctIdx));
 			});
 
-    // Clear innerHTML
-    this.innerHTML = "";
+		// Clear innerHTML
+		this.innerHTML = "";
 
 		const shadow = this.attachShadow({ mode: "open" });
 
-    let title = (this.getAttribute("data-title") ?? "");
-    title = title != "" ? title : "Quiz";
+		let title = (this.getAttribute("data-title") ?? "");
+		title = title != "" ? title : "Quiz";
 
-    let answerVerif = (this.getAttribute("data-answer-verification") ?? "");
-    answerVerif = ["end", "each"].includes(answerVerif.toLowerCase()) ? answerVerif : "end";
+		let answerVerif = (this.getAttribute("data-answer-verification") ?? "");
+		answerVerif = ["end", "each"].includes(answerVerif.toLowerCase()) ? answerVerif : "end";
 
 		shadow.adoptedStyleSheets = [sheet];
 		shadow.innerHTML = `
@@ -95,19 +95,34 @@ class QuizElement extends HTMLElement {
 					labelElem,
 					document.createElement("br"),
 				);
-				
+
 				questions[i]["answers"][aIdx]["radioElem"] = radioElem;
 				questions[i]["answers"][aIdx]["labelElem"] = labelElem;
 			}
 
 			if (answerVerif == "each") {
+				let answerButton = Object.assign(document.createElement("button"), {
+					className: "answer-button",
+					textContent: "Check answer",
+				});
+
+				answerButton.addEventListener("click", () => {
+					Array.from(q.answers.map((x) => x.radioElem)).forEach(element => {
+						element.setAttribute("disabled", "true")
+					});
+					
+					q.answers.forEach((answer) => {
+						if (answer.correct) {
+							answer.labelElem.classList.add("correct");
+						} else if (!answer.correct && answer.radioElem.checked) {
+							answer.labelElem.classList.add("false");
+						}
+
+					})
+				})
+
 				// Add answer check button
-				shadow.append(
-					Object.assign(document.createElement("button"), {
-						className: "answer-button",
-						textContent: "Check answer",
-					}),
-				);
+				shadow.append(answerButton);
 			}
 		}
 
@@ -122,7 +137,7 @@ class QuizElement extends HTMLElement {
 				Array.from(shadow.querySelectorAll(".answer-radio")).forEach(element => {
 					element.setAttribute("disabled", "true")
 				});
-				console.log(questions);
+				
 				questions.forEach((question) => {
 					question.answers.forEach((answer) => {
 						if (answer.correct) {
@@ -130,7 +145,7 @@ class QuizElement extends HTMLElement {
 						} else if (!answer.correct && answer.radioElem.checked) {
 							answer.labelElem.classList.add("false");
 						}
-						
+
 					})
 				})
 			})
