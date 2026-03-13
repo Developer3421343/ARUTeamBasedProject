@@ -106,20 +106,7 @@ class QuizElement extends HTMLElement {
 					textContent: "Check answer",
 				});
 
-				answerButton.addEventListener("click", () => {
-					Array.from(q.answers.map((x) => x.radioElem)).forEach(element => {
-						element.setAttribute("disabled", "true")
-					});
-					
-					q.answers.forEach((answer) => {
-						if (answer.correct) {
-							answer.labelElem.classList.add("correct");
-						} else if (!answer.correct && answer.radioElem.checked) {
-							answer.labelElem.classList.add("false");
-						}
-
-					})
-				})
+				answerButton.addEventListener("click", () => markAnswers([q]));
 
 				// Add answer check button
 				shadow.append(answerButton);
@@ -133,22 +120,7 @@ class QuizElement extends HTMLElement {
 				textContent: "Check answers",
 			});
 
-			answerButton.addEventListener("click", () => {
-				Array.from(shadow.querySelectorAll(".answer-radio")).forEach(element => {
-					element.setAttribute("disabled", "true")
-				});
-				
-				questions.forEach((question) => {
-					question.answers.forEach((answer) => {
-						if (answer.correct) {
-							answer.labelElem.classList.add("correct");
-						} else if (!answer.correct && answer.radioElem.checked) {
-							answer.labelElem.classList.add("false");
-						}
-
-					})
-				})
-			})
+			answerButton.addEventListener("click", () => markAnswers(questions));
 
 			// Add answer check button
 			shadow.append(
@@ -160,3 +132,22 @@ class QuizElement extends HTMLElement {
 }
 
 customElements.define("quiz-element", QuizElement);
+
+function markAnswers(questions) {
+	// Iterate through all answers
+	questions.flatMap((x) => x.answers).forEach(answer => {
+		console.log(answer);
+		// Disable radio buttons
+		answer.radioElem.setAttribute("disabled", "true");
+
+		// Check answer
+		if (answer.correct) {
+			// Show as correct
+			answer.labelElem.classList.add("correct");
+		} else if (!answer.correct && answer.radioElem.checked) {
+			// Show as incorrect
+			answer.labelElem.classList.add("false");
+		}
+
+	});
+}
