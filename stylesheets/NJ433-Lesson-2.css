@@ -27,7 +27,7 @@ h1, h3 {
     border: 3px solid rgb(132, 0, 255);
     padding: 10px;
     text-align: center;
-    color: rgb(255, 0, 0);
+    color: rgb(49, 15, 15);
     }
 
 .powers-table td{
@@ -38,7 +38,7 @@ background-color: lightskyblue;
 }
 
 .powers-table tr:first-child th{
-    background-color:magenta;
+    background-color:rgb(255, 0, 255);
 }
 
 .square-roots-table{
