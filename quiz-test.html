@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LESSON NAME HERE | One and Done</title>       <!-- INSERT LESSON NAME -->
+    <!-- Header -->
+    <script src="/scripts/common/header.js" defer></script>
+    <link rel="stylesheet" href="/stylesheets/common/header.css">
+    <!-- Footer -->
+    <script src="/scripts/common/footer.js" defer></script>
+    <link rel="stylesheet" href="/stylesheets/common/footer.css">
+    <!-- Branding -->
+    <link rel="stylesheet"  href="/stylesheets/common/branding.css">
+
+    <script type="module" src="/scripts/shared/components/quiz.js"></script>
+</head>
+
+<body>
+    <div class="content">
+        <main>
+            <!-- ALL HTML GOES HERE IN THESE MAIN TAGS -->
+            <quiz-element data-title="Test quiz" data-answer-verification="each"> <!-- Optional quiz title, leave blank for auto -->
+                <ul data-title="testq"> <!-- Optional question title, leave blank if omitting -->
+                    <li>HTML</li>
+                    <li data-correct="true">CSS</li>
+                    <li>JS</li>
+                </ul>
+                <ul data-title="aaa"> <!-- Optional question title, leave blank if omitting -->
+                    <li data-correct="true">a</li>
+                    <li>b</li>
+                    <li>c</li>
+                </ul>
+            </quiz-element>
+        </main>
+    </div>
+</body>
+
+</html>
