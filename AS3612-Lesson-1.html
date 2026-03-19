@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LESSON NAME HERE | One and Done</title> <!-- INSERT LESSON NAME -->
+    <!-- Header -->
+    <script src="/scripts/common/header.js" defer></script>
+    <link rel="stylesheet" href="/stylesheets/common/header.css">
+    <!-- Footer -->
+    <script src="/scripts/common/footer.js" defer></script>
+    <link rel="stylesheet" href="/stylesheets/common/footer.css">
+    <!-- Branding -->
+    <link rel="stylesheet" href="/stylesheets/common/branding.css">
+    <!-- Lesson styling -->
+    <link rel="stylesheet" href="/stylesheets/shared/lessons.css">
+    <link rel="stylesheet" href="/stylesheets/AS3612-Lesson-1.css">
+    <script type="module" src="/scripts/shared/components/scroll-to-top.js"></script>
+</head>
+
+<body>
+    <div class="content">
+        <nav>
+            <ul class="breadcrumb">
+                <li><a href="/">Home</a></li>
+                <li><a href="">Lessons</a></li>
+                <li>LESSON NAME HERE</li> <!-- INSERT LESSON NAME -->
+            </ul>
+        </nav>
+        <main>
+            <div class="lessons-container">
+                <h2>Probability</h2>
+                <p>Probability tells us how likely something is to happen. It ranges from 0 to 1.</p>
+
+                <img src="/images/Probability.png" alt="Probability illustration" class="lesson-img">
+
+                <p>If you roll a fair 6-sided dice, what is the probability of rolling a 3?</p>
+
+                <button onclick="checkProb(1)">1/3</button>
+                <button onclick="checkProb(2)">1/6</button>
+                <button onclick="checkProb(3)">1/2</button>
+                <p id="probResult"></p>
+
+                <div class="back-button">
+                    <button onclick="window.location.href='lessons.html'">Back to Lessons</button>
+                </div>
+
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
