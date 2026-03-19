@@ -1,0 +1,60 @@
+main {
+    padding-bottom: 50px;
+}
+
+.breadcrumb {
+    position: absolute;
+}
+
+h1 {
+    text-align: center;
+    text-decoration: underline;
+}
+
+.person-chip {
+    width: 275px;
+    height: 500px;
+    background-color: var(--primary-colour);
+    margin: 10px;
+    border-radius: 15px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.person-chip.low {
+    margin-top: 200px;
+}
+
+#team-chips-section {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
+.person-chip .image {
+    width: 225px;
+    height: 225px;
+    border-radius: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.person-chip .name {
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--secondary-colour);
+    font-family: var(--header-font-family);
+    margin: 12px 0;
+}
+
+.person-chip p {
+    width: 100%;
+    flex-grow: 1;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin: 0;
+    color: var(--primary-contrast);
+}
