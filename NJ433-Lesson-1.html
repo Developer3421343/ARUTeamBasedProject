@@ -16,6 +16,13 @@
     <!-- Lesson styling -->
     <link rel="stylesheet" href="/stylesheets/shared/lessons.css">
     <link rel="stylesheet" href="/stylesheets/NJ433-Lesson-1.css">
+    <link rel="icon" type="image/x-icon" href="/images/1squared.png">
+    <script type="module" src="/scripts/shared/components/quiz.js"></script>
+    <script src="/scripts/NJ433-Lesson-1.js" defer></script>
+    <script type="module" src="/scripts/shared/components/scroll-to-top.js"></script>
+
+
+
 </head>
 
 <body>
@@ -29,58 +36,118 @@
         </nav>
         <main>
             <!-- ALL HTML GOES HERE IN THESE MAIN TAGS -->
+
              <h1> Prime Numbers</h1>
              
              <section>
-                <h3> Definition </h3>
-                <p>    A Prime Number is a whole number that is greater than 1, that has exactly two factors 1 and the number it self.</p>
+                <h3 style="color: red;"> Definition </h3>
+                <p class="solid">   A Prime Number is a whole number greater than 1, that has exactly two factors: 1 and itself.</p>
              </section>
-
+             <p>For Example 11 is only divisible by 1 and 11. It also needs to be a positive number. The opposite of a prime number is a composite number (more than 2 factors). </p>
+             <p> A Composite Number has more than 2 factors.</p>
             <section>
-                <h3>Key points to remember</h3>
+                <img src="images/Primenumbers1-100.png" alt="Picture of prime numbers from 1 to 100" width="auto" height="auto">
+                <div class="key-points">
+                <h3>Key points to remember 🎯</h3>
                 <ul>
                     <li>It must be a whole number</li>
                     <li>Must be greater than 1 </li>
-                    <li>Only two divisors.</li>
+                    <li>Exactly two distinct divisors.</li>
                 </ul>
+                </div>
+                <p style ="background-color: #ffebee; padding: 10px; border: 3px solid red;">
+                    <strong>Note:</strong> 1 is <strong>NOT</strong> a prime number. To be a prime number, it should have <em>exactly</em> two factors, 1 only has itself.
+                </p>
+
+                <div class ="common-mistakes">
+                    <h3>❗Common Mistakes</h3>
+                    <ul>
+                        <li><strong>1 Is a Prime Number?</strong><br>1 only has one factor, it doesn't have 2 factors</li>
+                        <li><strong>All Odd numbers are Prime Numbers?</strong><br>Many Odd numbers are composite, like 9, 15, 21</li>
+                        <li><strong>2 Is the Only Even Prime Number?</strong><br>2 is the only even number that is prime. Every other even number has more than two factors</li>
+                    </ul>
+                </div>
             </section>
 
             <section>
                 <h3> Examples </h3>
-                <table>
-                    <thead>
+                <table class="prime-table">
                         <tr>
-                            <th> Number</th>
-                            <th> Factors</th>
-                            <th> Prime?</th>
+                            <th>Number</th>
+                            <th>Factors</th>
+                            <th>Prime?</th>
+                            <th>Why</th>
                         </tr>
-                    </thead>
-                    <tbody>
+
                         <tr>
                             <td> 2 </td>
                             <td> 1,2 </td>
-                            <td> Yes </td>
+                            <td style="color: green;">Yes</td>
+                            <td>Exactly 2 factors</td>
                         </tr>
                         <tr>
                             <td> 3 </td>
                             <td> 1,3 </td>
-                            <td> Yes </td>
+                            <td style="color: green;">Yes</td>
+                            <td>Exactly 2 factors</td>
+
                         </tr>                        
                         <tr>
                             <td> 4 </td>
                             <td> 1,2,4 </td>
-                            <td> No </td>
+                            <td style="color: red;">No</td>
+                            <td>More than 2 factors</td>
+
                         </tr>                        
                         <tr>
                             <td> 7 </td>
                             <td> 1,7 </td>
-                            <td> Yes </td>
+                            <td style="color: green;">Yes</td>
+                            <td>Exactly 2 factors</td>
+
                         </tr>
-                    </tbody>
                 </table>
             </section>
 
-            <!-- of the key points to remember is that it must be a whole number, 1 is NOT a prime number because it only has itself. only 2 divisors. -->
+
+            <button class="button" id="is-it-a-prime-btn">Is It a Prime Number?</button>
+            <input id ="is-it-a-prime-input" type="text" />
+            <b id="is-it-a-prime-output"></b>
+
+            <p>Here is a short video on Prime Numbers</p>
+            <p><iframe width="600" height="400" src="https://www.youtube.com/embed/MUVQY6Oo5x8?si=GkEnvp4L3-p9ezZo" title="Prime Numbers from CorbettMaths" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
+
+
+
+
+            <p> Prime Numbers Quiz 🧠</p>
+                <p> 1. Is 53 a prime number?<br> Answer: <span class="answer">Yes</span></p>
+                <p> 2. Is 223 a prime number?<br> Answer:  <span class="answer">Yes</span></p>
+                <p> 3. List the Prime Numbers between 50 and 60?<br> Answer:  <span class="answer">53, 59</span></p>
+                <p> 4. Which of the following is a prime number?<br> 13, 15, 21<br> Answer: <span class="answer">13</span></p>
+                <p> 5. How many prime numbers are there between 10 and 25?<br> 5, 4, 7<br> Answer: <span class="answer">5</span></p> 
+<!--
+            <quiz-element data-title="Prime Numbers Quiz">
+                <ul data-title="Is 53 a prime number?">
+                    <li data-correct="true">Yes</li>
+                    <li>No</li>
+                </ul>
+                <ul data-title="Is 223 a prime number?">
+                    <li data-correct="true">Yes</li>
+                    <li>No</li>
+                </ul>
+                <ul data-title="List the Prime Numbers between 50 and 60?">
+                    <li>51, 53, 55, 57, 59</li>
+                    <li data-correct="true">53, 59</li>
+                    <li>50, 52, 54, 56, 58</li>
+                </ul>
+            </quiz-element>
+
+            <br><br>
+        -->
+    
+        <!--
+            of the key points to remember is that it must be a whole number, 1 is NOT a prime number because it only has itself. only 2 divisors. -->
 
             <!-- Examples. 2, factors 1,2 Prime Number
                       3, factors 1,3 Prime Number   
@@ -90,6 +157,36 @@
             there are 25 prime numbers between 1 and 100. 
         -->
 
+            <h3> Further Study</h3>
+            <p>Hover over the numbers to see which is a Prime Number.</p>
+            
+            <section>
+                <div class="image-overlay-container">
+                    <img src="images/7.png" alt="7" width="250" height="250">
+                    <div class="image-overlay-text">7 Is a Prime Number</div>
+                </div>
+
+                <div class="image-overlay-container">
+                    <img src="images/17.png" alt="17" width="250" height="250">
+                    <div class="image-overlay-text">17 is a Prime Number</div>
+                </div>
+
+                <div class="image-overlay-container">
+                    <img src="images/19.png" alt="19" width="250" height="250">
+                    <div class="image-overlay-text">19 is a Prime Number</div>
+                </div>
+
+               <!-- <div class="image-overlay-container">
+                    <img src="images/21.png" alt="21" width="300" height="300">
+                    <div class="image-overlay-text">21 is Not a Prime Number</div>
+                </div>
+            </section>
+            -->
+
+            <footer class="lesson-footer">
+                <p>© 2026 One and Done</p>
+                <a href="/nj433-lesson-2" class="next-lesson">Next Lesson →</a>
+            </footer>
         </main>
     </div>
 </body>

@@ -16,6 +16,10 @@
     <!-- Lesson styling -->
     <link rel="stylesheet" href="/stylesheets/shared/lessons.css">
     <link rel="stylesheet" href="/stylesheets/NJ433-Lesson-2.css">
+    <link rel="icon" type="image/x-icon" href="/images/Squareroot.png">
+    <script src="/scripts/NJ433-Lesson-2.js" defer></script>
+    <script type="module" src="/scripts/shared/components/scroll-to-top.js"></script>
+
 </head>
 
 <body>
@@ -29,13 +33,151 @@
         </nav>
         <main>
             <!-- ALL HTML GOES HERE IN THESE MAIN TAGS -->
-             <h1> Powers and Roots</h1>
-             
+             <h1> Powers </h1>
+             <p>Powers is a shorthand way of writing a calculation using the same number. <br>For Example, instead of 4 * 4 * 4 you can write 4<sup>3</sup> which reads as 4 to the power of three. </p>
+
              <section>
-                <h3> Definition </h3>
-                <p>  A power is a repeated calculation of the number itself indicated by the exponent </p>
-                <p>  A root of a number is a value that, when multiplied by the exponent equals the original number.   </p>
+                <h3 style="color: red;"> Definition </h3>
+                <p class="solid">   A power is a repeated calculation of the number itself indicated by the exponent. <br> <!-- A root of a number is a value that, when multiplied by the exponent equals the original number.--></p>  
              </section>
+
+             <p>A power can also be known as an index or an exponent it's a small floating number or a letter above the number.</p>
+             <div class="container">
+                <img src="images/Powers.png" alt="123" width="350" height="150" class="image">
+                <div class="overlay">The big number is called base and the smaller number is called exponent.</div>
+            </div>
+
+             <p>There is also negative exponents which means dividing the number.
+             <br>For Example, 8<sup>-1</sup> = <sup>1</sup>&frasl;<sub>8</sub> = 0.125. <br>Example 5<sup>-3</sup> = <sup>1</sup>&frasl;<sub>5</sub> *  <sup>1</sup>&frasl;<sub>5</sub> *  <sup>1</sup>&frasl;<sub>5</sub> = 0.008 You can also write it this way. 5<sup>-3</sup> = <sup>1</sup>&frasl;<sub>5*5*5 </sub></sup> = 1/<sub>5<sup>3</sup></sub> = 1/<sub>125</sub> = 0.008 </p>
+             <p>What if it's 0? If 1 is the exponent then 9<sup>1</sup> = 9 and if the exponent is 0 then 9<sup>0</sup> = 1, 0<sup>0</sup> = 1</p>
+
+             <h3> Examples </h3>
+                <table class ="powers-table">
+                    <tr>
+                    <th colspan="3">   Powers of 5</th>
+                    </tr>
+                        <tr>
+                            <td> 5<sup>2</sup></td>
+                            <td> 5*5</td>
+                            <td> 25</td>
+                        </tr>
+                        <tr>
+                            <td> 5<sup>1</sup></td>
+                            <td> 5</td>
+                            <td> 5</td>
+                        </tr>
+                        <tr>
+                            <td> 5<sup>0</sup></td>
+                            <td> 1</td>
+                            <td> 1</td>
+                        </tr>
+                        <tr>
+                            <td> 5<sup>-1</sup></td>
+                            <td> <sup>1</sup>&frasl;<sub>5</sub></td>
+                            <td> 0.2</td>
+                        </tr>                       
+                        <tr>
+                            <td> 5<sup>-2</sup></td>
+                            <td> <sup>1</sup>&frasl;<sub>25</sub></td>
+                            <td> 0.04</td>
+                        </tr>
+                </table>
+
+
+
+                <div class="video-row">
+                    <div>
+                        <p>Here is a short video on Square Numbers</p><iframe width="700" height="500" src="https://youtube.com/embed/63qQOYbZS0g"></iframe><!--<iframe width="560" height="315" src="https://www.youtube.com/embed/63qQOYbZS0g?si=zcBR_fjYycrXmMec" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>-->
+                    </div>
+                    
+                    <div>
+                        <p>Powers and Indices</p><iframe width="700" height="500" src="https://youtube.com/embed/To04tERCUPs"></iframe><!--<iframe width="560" height="315" src="https://www.youtube.com/embed/To04tERCUPs?si=Iv6E2cQJZ0pZw-hs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>-->
+                    </div>
+                </div>
+
+             <ul>
+                 <li>Power: 2<sup>3</sup> = 2 * 2 * 2 = 8</li>
+                 <li>Root: 8<sup>1/3</sup> = 2</li>
+             </ul>
+             
+             <p> Powers Quiz</p>
+                <p> 1. What is the value of 6<sup>3</sup>? <br> Answer: <span class="answer"> 216</span></p>
+                <p> 2. Which number represents the base number in 7<sup>3</sup>? <br> Answer: <span class="answer">7</span></p>
+                <p> 3. Which number represents the index number in 8<sup>6</sup>? <br> Answer: <span class="answer">6</span></p>
+                <p> 4. Write this in its simpler form 8*8*8*8*8 ? <br> Answer: <span class="answer"> 8<sup>5</sup></span></p>
+                <p> 5. What is the value of 5<sup>-2</sup>? <br> Answer: <span class="answer">0.04</span></p> 
+
+            <h3>Try It Yourself</h3>
+            <p> Enter a Base and Exponent:</p>
+            <input id="base-input" type ="number" placeholder="Base" min="1" max="10" style="width:150px;">
+            <input id="exponent-input" type="number" placeholder="Exponent" min="1" max="10" style="width:150px;">
+            <button id="calc-power-btn">Calculate</button>
+
+            <p id="power-output"></p>
+
+             <h1> Roots </h1>
+
+             <section>
+                <h3 style="color: red;"> Definition </h3>
+                <p class="solid">   A root of a number is a value that, when multiplied by the exponent equals the original number. 
+                <p> Roots are reverse of a square so 5<sup>2</sup> = 25,  &#8730;25 = 5
+                <br> A cube root is the opposite of a cube, so 5<sup>3</sup> = 125,  3&#8730;125 = 5</p>
+                <p>Two negative numbers multiplied together equals a positive number. For Example, square root of 36 is 6 <sup>2</sup>.  36 also has a negative square root, since (-6) ² = 36.</p>
+                <p>the two roots of 16 are +4 and -4 could be written as ±4 </p>
+                <p>The symbol for the square root is &#8730;. For example, &#8730;36 means 'the square root of 36'. The symbol &#8730; refers to the positive square root, so &#8730;36 = 6 
+                <br> For cube roots, the symbol is 3&#8730;. For example, 3&#8730;27 means 'the cube root of 27'. The cube root of 27 is 3, since 3<sup>3</sup> = 27. </p>
+             </section>
+
+             <div class="container">
+                <img src="images/Root.png" alt="123" width="350" height="150" class="image">
+                <div class="overlay">9<sup>2</sup> = 81 and &#8730;81 = 9</div>
+            </div>
+
+             <h3> Examples </h3>
+                <table class ="square-roots-table">
+                    <tr>
+                    <th colspan="3">   Square Roots</th>
+                    </tr>
+                        <tr>
+                            <th> &#8730;25</th>
+                            <th> 5*5</th>
+                            <th>5</th>
+                        </tr>
+                        <tr>
+                            <th> &#8730;36</th>
+                            <th> 6*6</th>
+                            <th>6</th>
+                        </tr>
+                        <tr>
+                            <th> &#8730;49</th>
+                            <th> 7*7</th>
+                            <th>7</th>
+                        </tr>
+                        <tr>
+                            <th> &#8730;64</th>
+                            <th> 8*8</th>
+                            <th>8</th>
+                        </tr>                       
+                        <tr>
+                            <th> &#8730;81</th>
+                            <th> 9*9</th>
+                            <th>9</th>
+                        </tr>
+                </table>
+
+                <div class="video-row">
+                    <div>
+                        <p>Here is a short video on Square Roots</p><p><iframe width="800" height="500" src="https://youtube.com/embed/oSfs9mGO_lU"></iframe></p><!--<iframe width="560" height="315" src="https://www.youtube.com/embed/oSfs9mGO_lU?si=caO2r__4YEXGgj6v" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>-->
+                    </div>
+                    
+                    <div>
+                        <p>Cube Roots</p><p><iframe width="800" height="500" src="https://youtube.com/embed/2Xn_mYEoct4"></iframe></p><!--<iframe width="560" height="315" src="https://www.youtube.com/embed/2Xn_mYEoct4?si=kcGYCq2NEfOXpnBc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>-->
+                    </div>
+                </div>
+             <p> Roots Quiz</p>
+                <p> 1. What is the square root of 36? <br> Answer: <span class="answer"> 6, The square root of 36 is 6, 6<sup>2</sup> = 6 x 6 = 36 Which means that √36 = 6</span></p>
+                <p> 2. What is the square root of 81? <br> 9, 27, 3<br> Answer: <span class="answer">9</span></p>
+                <p> 3. What is the square root of±64? <br> Answer: <span class="answer">±8, The square root of 64 is 8 because 8<sup>2</sup> = 8 * 8 = 64 and The square root of 64 is also -8 (because -8<sup>2</sup> = -8 x -8 = +64) This is usually written as ±8 </span></p>
         </main>
     </div>
 </body>
