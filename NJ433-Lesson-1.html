@@ -120,12 +120,35 @@
 
 
 
-            <p> Prime Numbers Quiz 🧠</p>
-                <p> 1. Is 53 a prime number?<br> Answer: <span class="answer">Yes</span></p>
-                <p> 2. Is 223 a prime number?<br> Answer:  <span class="answer">Yes</span></p>
-                <p> 3. List the Prime Numbers between 50 and 60?<br> Answer:  <span class="answer">53, 59</span></p>
-                <p> 4. Which of the following is a prime number?<br> 13, 15, 21<br> Answer: <span class="answer">13</span></p>
-                <p> 5. How many prime numbers are there between 10 and 25?<br> 5, 4, 7<br> Answer: <span class="answer">5</span></p> 
+
+
+            <quiz-element data-answer-verification="each" data-title="Prime Numbers Quiz 🧠">
+                <ul data-title="Is 53 a prime number?">
+                    <li data-correct="true">True</li>
+                    <li>False</li>
+                </ul>
+                <ul data-title="Is 223 a prime number?">
+                    <li data-correct="true">True</li>
+                    <li>False</li>
+                </ul>
+                <ul data-title="What are the Prime Numbers between 50 and 60?">
+                    <li>51,58</li>
+                    <li data-correct="true">53,59</li>
+                    <li>52,55</li>
+                </ul>
+                <ul data-title="Which of the following is a prime number?">
+                    <li>15</li>
+                    <li>21</li>
+            
+                    <li data-correct="true">13</li>
+            
+                </ul>
+                <ul data-title="How many prime numbers are there between 10 and 25?">
+                    <li data-correct="true">5</li>
+                    <li>4</li>
+                    <li>7</li>
+                </ul>
+            </quiz-element>
 <!--
             <quiz-element data-title="Prime Numbers Quiz">
                 <ul data-title="Is 53 a prime number?">
