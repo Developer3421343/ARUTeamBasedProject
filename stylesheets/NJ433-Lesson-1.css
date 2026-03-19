@@ -133,3 +133,21 @@ img[src*="Primenumbers1-100.png"] {
 section{
     margin: 20px;
 }
+
+.lesson-footer {
+    padding: 20px 0;
+    text-align: center;
+    font-size: 25px;
+}
+
+.lesson-footer .next-lesson{
+    margin-top: 10px;
+    padding: 10px 20px;
+    color: #FFC72C;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.lesson-footer .next-lesson:hover {
+    text-decoration: underline;
+}
