@@ -1,0 +1,24 @@
+:host {
+    position: fixed;
+    bottom: 25px;
+    right:  25px;
+    width: 60px;
+    height: 60px;
+    background-color: var(--primary-colour);
+    border-radius: 100%;
+    box-shadow: 0 0 3px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    padding-top: 8px;
+    user-select: none;
+    color: var(--secondary-colour);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cursor: pointer;
+    transition: right 0.5s;
+}
+
+:host(.hidden) {
+    right: -63px;
+}
