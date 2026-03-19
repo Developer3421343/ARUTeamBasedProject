@@ -35,7 +35,7 @@ function postHeaderLoad() {
     });
 
     Array.from(document.getElementById("header-dropdown-menu").children).forEach((menuHeader) => {
-        
+
         let target = document.getElementById(menuHeader.getAttribute('aria-controls'));
 
         switch (target.tagName) {
@@ -45,7 +45,7 @@ function postHeaderLoad() {
                 Array.from(target.children).forEach((ul) => {
                     submenus.push(Array.from(ul.querySelectorAll("a")));
                 });
-                
+
                 headerNavElements.set(menuHeader, submenus);
                 break;
 
@@ -106,25 +106,6 @@ function postHeaderLoad() {
             }
         }
     });
-
-    document.querySelectorAll("#header-dropdown-menu [data-id]").forEach((el) => {
-    ["mouseover", "focus"].forEach((evt) =>
-        el.addEventListener(evt, () => {
-            document.querySelectorAll(`#header-dropdown-content .header-dropdown-show`).forEach((e) => {
-                e.classList.remove("header-dropdown-show");
-            })
-            document.querySelector(`#header-dropdown-content [data-id="${el.dataset.id}"]`)?.classList.add("header-dropdown-show");
-            el.setAttribute("aria-expanded", "true");
-        }),
-    );
-
-    ["mouseout", "blur"].forEach((evt) =>
-        el.addEventListener(evt, () => {
-            document.querySelector(`#header-dropdown-div`)?.classList.remove("header-dropdown-show");
-            el.setAttribute("aria-expanded", "false");
-        })
-    );
-});
 }
 
 
