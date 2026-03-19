@@ -7,7 +7,7 @@ h1{
 p.solid {
     border-style: solid;
         padding: 5px;
-        width: 950px; 
+        width: 850px; 
         color: green;
 }
 
@@ -30,6 +30,9 @@ img[src*="Primenumbers1-100.png"] {
     text-align: center;
     background-color: gold;
     text-align: center;
+}
+.prime-table td{
+    background-color: tomato;
 }
 
 
