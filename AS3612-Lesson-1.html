@@ -28,25 +28,76 @@
             </ul>
         </nav>
         <main>
-            <div class="lessons-container">
-                <h2>Probability</h2>
-                <p>Probability tells us how likely something is to happen. It ranges from 0 to 1.</p>
+<div class="lessons-container">
+<h2 style="color: #ffffff;">Probability</h2>
+<p style="color: #ffffff">
+Probability is the branch of mathematics that deals with measuring and analyzing uncertainty. It provides a framework for quantifying how likely an event is to occur, expressed as a number between 0 (impossible) and 1 (certain). For example, flipping a fair coin gives a probability of 0.5 for landing heads and 0.5 for tails. Probability is widely applied in everyday life whether predicting weather, assessing risks in business, or modeling outcomes in science and engineering. At its core, it helps us make informed decisions when outcomes are not guaranteed.
+</p>
+<img src="images/Probability.png" class="lesson-img">
 
-                <img src="/images/Probability.png" alt="Probability illustration" class="lesson-img">
+<div style="margin-top:20px;">
+  <button onclick="showQuiz(event)">Take Quiz</button>
+</div>
 
-                <p>If you roll a fair 6-sided dice, what is the probability of rolling a 3?</p>
+<div id="quizSection" style="display:none; margin-top:20px;">
 
-                <button onclick="checkProb(1)">1/3</button>
-                <button onclick="checkProb(2)">1/6</button>
-                <button onclick="checkProb(3)">1/2</button>
-                <p id="probResult"></p>
+<p style="color:#ffffff;">
+1. A bag contains 3 red, 2 blue, and 5 green balls. What is the probability of picking a blue ball?
+</p>
+<button onclick="checkProb(1,1)">2/10</button>
+<button onclick="checkProb(2,1)">1/5</button>
+<button onclick="checkProb(3,1)">2/5</button>
+<p id="probResult1"></p>
 
-                <div class="back-button">
-                    <button onclick="window.location.href='lessons.html'">Back to Lessons</button>
-                </div>
+<p style="color:#ffffff;">
+2. A fair coin is flipped twice. What is the probability of getting two heads?
+</p>
+<button onclick="checkProb(1,2)">1/2</button>
+<button onclick="checkProb(2,2)">1/4</button>
+<button onclick="checkProb(3,2)">1/3</button>
+<p id="probResult2"></p>
 
-            </div>
-        </main>
+<p style="color:#ffffff;">
+3. A dice is rolled. What is the probability of getting an even number?
+</p>
+<button onclick="checkProb(1,3)">1/3</button>
+<button onclick="checkProb(2,3)">1/2</button>
+<button onclick="checkProb(3,3)">2/3</button>
+<p id="probResult3"></p>
+
+</div>
+
+<br>
+
+<p style="color:#ffffff;">
+Probability is a powerful tool that helps us understand and manage uncertainty in everyday life. By comparing favorable outcomes to all possible outcomes, it allows us to measure chances, predict results, and make better decisions in situations where certainty is not guaranteed.
+</p>
+
+<br>
+<br>
+
+<h3 style="color: #ffffff;">🎯 Activity: Try It Yourself</h3>
+
+<br>
+
+<p style="color:#ffffff;">
+A bag contains 4 red balls and 6 blue balls.
+</p>
+<p style="color:#ffffff;">
+What is the probability of picking a red ball? (Enter as fraction e.g. 2/5)
+</p>
+
+<input type="text" id="probInput" placeholder="Enter answer">
+<button onclick="checkProbActivity()">Check Answer</button>
+
+<p id="probActivityResult"></p>
+
+<div class="back-button">
+<button onclick="window.location.href='lessons.html'">Back</button>
+</div>
+
+</div>
+</main>
     </div>
 </body>
 
