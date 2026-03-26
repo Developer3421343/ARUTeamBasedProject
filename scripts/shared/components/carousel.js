@@ -58,16 +58,47 @@ document.querySelectorAll(".carousel-nav-button").forEach((e) => {
 	});
 });
 
-function navigateCarouselToIndex(carousel, index) {
+
+function navigateCarouselToIndex(carousel, index, dir) {
+
+	const carLen = carousel.querySelectorAll(".carousel-img").length;
+
+	let oldIdx = carouselIdxs.get(carousel);
+	
+	let travelDir;
+
+	if ((index > oldIdx && !(oldIdx == 0 && index+1 == carLen)) || (oldIdx+1 == carLen && index == 0)) {
+		travelDir = "right";
+	} else {
+		travelDir = "left";
+	}
+
 	if (!carouselBusy.get(carousel)){
+		
 		carousel.querySelectorAll(".carousel-number-div")[0].innerHTML = `${Number(index) + 1} / ${carousel.querySelectorAll(".carousel-img").length}`;
 		carouselBusy.set(carousel, true);
 		let oldElement = carousel.querySelectorAll(".carousel-img")[carouselIdxs.get(carousel)];
 		carouselIdxs.set(carousel, index);
 		// Change image
 		let newElement = carousel.querySelectorAll(".carousel-img")[index];
+		
+		debugger
+
+		carousel.querySelectorAll(".carousel-img").forEach((e) => {
+			e.classList.remove("left", "right");
+			e.classList.add(travelDir);
+		})
+
+		
+
+		oldElement.classList.add("leaving"
+			+ travelDir[0].toUpperCase()
+			+ travelDir.substring(1));
+		
+		newElement.classList.add("transition");
 		newElement.classList.add("visible");
-		oldElement.classList.add("leaving");
+		
+		
 		carousel.querySelectorAll(".carousel-img").forEach((e) => {
 			if (e != newElement) {
 				e.classList.remove("visible");
@@ -75,8 +106,10 @@ function navigateCarouselToIndex(carousel, index) {
 		});
 
 		setTimeout(() => {
-		oldElement.classList.remove("leaving");
-		carouselBusy.set(carousel, false);
+			oldElement.classList.remove("leavingLeft");
+			oldElement.classList.remove("leavingRight");
+			oldElement.classList.remove("transition");
+			carouselBusy.set(carousel, false);
 		}, 950); 
 
 		// Change dot

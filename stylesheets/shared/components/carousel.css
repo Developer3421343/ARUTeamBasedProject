@@ -44,8 +44,18 @@
     position: absolute;
     visibility: hidden;
     object-fit: cover;    
-    transform: translateX(50%);
+}
+
+.carousel-img.transition {
     transition: transform 900ms linear;
+}
+
+.carousel-img.right {
+    transform: translateX(50%);
+}
+
+.carousel-img.left {
+    transform: translateX(-150%);
 }
 
 .carousel-img.visible  {
@@ -53,11 +63,15 @@
     visibility: visible;
 }
 
-.carousel-img.leaving {
+.carousel-img.leavingRight {
     transform: translateX(-150%);
     visibility: visible;
 }
 
+.carousel-img.leavingLeft {
+    transform: translateX(50%);
+    visibility: visible;
+}
 
 .carousel-number-div {
     z-index: 10;
