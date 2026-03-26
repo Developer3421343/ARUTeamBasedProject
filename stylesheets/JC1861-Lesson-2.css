@@ -1,23 +1,39 @@
 .TextBackgroundMain{
-    max-width: 85%;              /* Limit width for readability */
-    padding: 20px;                 /* Space inside the box */
-    border: 2px solid #3b61c9;     /* Coloured border */
-    border-radius: 8px;            /* Rounded corners */
-    background-color: #f5c61f;     /* Light background */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow */
-    margin: 20px auto;             /* Center horizontally */
+    max-width: 85%;              
+    padding: 20px;                 
+    border: 2px solid #3b61c9;     
+    border-radius: 8px;            
+    background-color: #f5c61f;     
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+    margin: 20px auto;
+    text-align: center;            
     font-family: Arial, sans-serif;
-    font-size: larger;             /* Larger font size */
+    font-size: larger;             
 }
 
 .TextBackgroundExplanation{
-    max-width: 95%;              /* Limit width for readability */
-    padding: 20px;                 /* Space inside the box */
-    border: 2px solid #3b61c9;     /* Coloured border */
-    border-radius: 8px;            /* Rounded corners */
-    background-color: #f5c61f;     /* Light background */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow */
-    margin: 20px auto;             /* Center horizontally */
+    max-width: 95%;              
+    padding: 20px;                 
+    border: 2px solid #3b61c9;     
+    border-radius: 8px;            
+    background-color: #f5c61f;     
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+    margin: 20px auto;    
+    text-align: center;             
     font-family: Arial, sans-serif;
-    font-size: larger;             /* Larger font size */
+    font-size: larger;             
+}
+
+.TextBackgroundPracticeQ{
+    max-width: 90%;              
+    padding: 50px;                
+    border: 4px solid #f5c61f;     
+    border-radius: 8px;           
+    background-color:  #3b61c9;     
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+    margin: 20px auto;     
+    text-align: center;            
+    font-family: Arial, sans-serif;
+    font-size: larger;    
+    font-weight: bolder;         
 }
