@@ -37,3 +37,31 @@
     font-size: larger;    
     font-weight: bolder;         
 }
+
+.TextBackgroundPracticeQPt2{
+    max-width: 45%; 
+    padding: 50px;                
+    border: 4px solid #f5c61f;     
+    border-radius: 8px;           
+    background-color: aliceblue;     
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+    margin: right;     
+    text-align: center;            
+    font-family: Arial, sans-serif;
+    font-size: larger;    
+    font-weight: bolder;         
+}
+
+.TextBackgroundPracticeQPt3{
+    max-width: 45%; 
+    padding: 50px;                
+    border: 4px solid #f5c61f;     
+    border-radius: 8px;           
+    background-color: aliceblue;     
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+    margin: center;     
+    text-align: center;            
+    font-family: Arial, sans-serif;
+    font-size: larger;    
+    font-weight: bolder;         
+}
