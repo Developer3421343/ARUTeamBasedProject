@@ -56,7 +56,7 @@ class QuizElement extends HTMLElement {
             <b class="quiz-title">${title}</b>
             
             <div id="score-div">
-              <p>Current score: 0/30</p>
+              <p>Current score: 0/10</p>
               <p>Attempts: 0</p>
             </div>`;
 
