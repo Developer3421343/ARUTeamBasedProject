@@ -111,7 +111,23 @@ img[src*="Primenumbers1-100.png"] {
     display: inline-block;
 }
 
+.image2-overlay-container {
+    position: relative;
+    display: inline-block;
+}
 
+.image2-overlay-text{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 0, 0, 0.7);
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    padding: 90px 0;
+    opacity: 0;
+}
 
 .image-overlay-text {
     position: absolute;
@@ -127,6 +143,10 @@ img[src*="Primenumbers1-100.png"] {
 }
 
 .image-overlay-container:hover .image-overlay-text {
+    opacity: 1;
+}
+
+.image2-overlay-container:hover .image2-overlay-text {
     opacity: 1;
 }
 
