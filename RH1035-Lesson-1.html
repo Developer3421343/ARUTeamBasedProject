@@ -17,6 +17,7 @@
     <!-- Lesson styling -->
     <link rel="stylesheet" href="/stylesheets/shared/lessons.css">
     <link rel="stylesheet" href="/stylesheets/RH1035-Lesson-1.css">
+    <script src="scripts/RH1035-Lesson-1.js" defer></script>
 </head>
 
 <body>
@@ -30,11 +31,86 @@
         </nav>
         <main>
             <h1>Circles</h1>
+
+
+            
             <h2>Radius & diameter</h2>
+            <img class="circle-image" src="/images/circles/diameter-radius.png"
+                alt="A circle with the radius annotated"><br>
+            <p>The diameter of a cirlce is the total width of a circle</p>
+            <p>The radius is the distance between the center od the circle and any one point on the edge</p>
+            <p>The radius is always half of the diameter</p>
+            <p class="equation no-bottom-margin">diameter = radius × 2</p>
+            <p class="no-vertical-margin">likewise</p>
+            <p class="equation no-top-margin">radius = diameter ÷ 2</p>
+            <div class="interactive-demo single">
+                <div>
+                    <label for="radius-input">Radius</label><br>
+                    <input type="number" name="radius-input" id="radius-input" value="0" /><br><br>
+                    <label for="diameter-input">Diameter</label><br>
+                    <input type="number" name="diameter-input" id="diameter-input" value="0" />
+                </div>
+            </div>
+
+
+
+
+
             <h2>Circumference</h2>
+
+            <img class="circle-image" src="/images/circles/circumference.png"
+                alt="A circle with the circumference annotated"><br>
+            <p>The circumference of a circle is the total length of the distance around the circle</p>
+            <p>The circumference of a circle can be calculated by multiplying the diameter by pi (π)</p>
+            <p class="equation">circumference = π × diameter</p>
+            <p>An easy way of measuring the circumference of real, physical circles is to run a piece of string around
+                the circumference then measure the length with a ruler</p>
+            <div class="interactive-demo">
+                <div>
+                    <label for="circumference-diameter-input">Diameter</label><br>
+                    <input type="number" name="circumference-diameter-input" id="circumference-diameter-input"
+                        value="0" />
+                </div>
+                <div></div>
+                <div>
+                    <label for="">Circumference:</label>
+                    <div id="circumference-output">0</div>
+                </div>
+            </div>
+
+
+
+
+
             <h2>Area</h2>
+            <img class="circle-image" src="/images/circles/area.png" alt="A circle with the area annotated"><br>
+            <p>The area of a circle can be calculated by multiplying  pi by the radius squared</p>
+            <p class="equation">area = π × radius²</p>
+            <div class="interactive-demo">
+                <div>
+                    <label for="area-radius-input">Radius</label><br>
+                    <input type="number" name="area-radius-input" id="area-radius-input"
+                        value="0" />
+                </div>
+                <div></div>
+                <div>
+                    <label for="">Area:</label>
+                    <div><span id="area-output">0</span><span> units²</span></div>
+                </div>
+            </div>
+
+
+
+
             <h2>Chord</h2>
+            <img class="circle-image" src="/images/circles/chord.png" alt="A circle with a chord annotated"><br>
+
+
+
+
+
             <h2>Tangent</h2>
+            <img class="circle-image" src="/images/circles/tangent.png" alt="A circle with a tangent annotated"><br>
         </main>
     </div>
 </body>
