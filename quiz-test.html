@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LESSON NAME HERE | One and Done</title>       <!-- INSERT LESSON NAME -->
+    <title>LESSON NAME HERE | One and Done</title> <!-- INSERT LESSON NAME -->
     <!-- Header -->
     <script src="/scripts/common/header.js" defer></script>
     <link rel="stylesheet" href="/stylesheets/common/header.css">
@@ -12,7 +12,7 @@
     <script src="/scripts/common/footer.js" defer></script>
     <link rel="stylesheet" href="/stylesheets/common/footer.css">
     <!-- Branding -->
-    <link rel="stylesheet"  href="/stylesheets/common/branding.css">
+    <link rel="stylesheet" href="/stylesheets/common/branding.css">
 
     <script type="module" src="/scripts/shared/components/quiz.js"></script>
 </head>
@@ -21,16 +21,56 @@
     <div class="content">
         <main>
             <!-- ALL HTML GOES HERE IN THESE MAIN TAGS -->
-            <quiz-element data-title="Test quiz" data-answer-verification="each"> <!-- Optional quiz title, leave blank for auto -->
-                <ul data-title="testq"> <!-- Optional question title, leave blank if omitting -->
-                    <li>HTML</li>
-                    <li data-correct="true">CSS</li>
-                    <li>JS</li>
+            <quiz-element data-title="Lesson Two Quiz" data-answer-verification="each">
+                <ul data-title="1.) Calculate: 7 + 4 × 6">
+                    <li>66</li>
+                    <li data-correct="true">31</li>
+                    <li>42</li>
                 </ul>
-                <ul data-title="aaa"> <!-- Optional question title, leave blank if omitting -->
-                    <li data-correct="true">a</li>
-                    <li>b</li>
-                    <li>c</li>
+                <ul data-title="2.) Calculate: (7 + 4) × 6">
+                    <li data-correct="true">66</li>
+                    <li>31</li>
+                    <li>42</li>
+                </ul>
+                <ul data-title="3.) Calculate: 15 ÷ 3 + 8 × 2">
+                    <li>16</li>
+                    <li>46</li>
+                    <li data-correct="true">21</li>
+                </ul>
+                <ul data-title="4.) Write 3,200,000 in standard form">
+                    <li>32 × 10⁵</li>
+                    <li data-correct="true">3.2 × 10⁶</li>
+                    <li>0.32 × 10⁷</li>
+                </ul>
+                <ul data-title="5.) Write 0.00045 in standard form">
+                    <li data-correct="true">4.5 × 10⁻⁴</li>
+                    <li>4.5 × 10⁴</li>
+                    <li>45 × 10⁻⁵</li>
+                </ul>
+                <ul data-title="6.) Multiply: (4 × 10³) × (5 × 10²)">
+                    <li>20 × 10⁵</li>
+                    <li>9 × 10⁵</li>
+                    <li data-correct="true">2 × 10⁶</li>
+                </ul>
+                <ul data-title="7.) Find the prime factors of 36">
+                    <li>2 × 18</li>
+                    <li data-correct="true">2² × 3²</li>
+                    <li>6 × 6</li>
+                </ul>
+                <ul data-title="8.) Find the prime factors of 60">
+                    <li data-correct="true">2² × 3 × 5</li>
+                    <li>6 × 10</li>
+                    <li>2 × 30</li>
+                </ul>
+                <ul data-title="9.) Opposite = 9 cm, Hypotenuse = 15 cm. Find sin(θ)">
+                    <li>1.67</li>
+                    <li>0.4</li>
+                    <li data-correct="true">0.6</li>
+                </ul>
+                <ul data-title="10.) Adjacent = 12 cm, Hypotenuse = 13 cm. Find cos(θ)">
+                    <li>1.08</li>
+                    <li data-correct="true">0.923</li>
+                    <li>0.75</li>
                 </ul>
             </quiz-element>
         </main>
