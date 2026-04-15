@@ -106,3 +106,37 @@
         grid-template-columns: 1fr;
     }
 }
+
+.workings {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.8s ease, opacity 0.8s ease;
+}
+
+.workings.show {
+    max-height: 500px; 
+    opacity: 1;
+}
+
+
+
+.answer {
+    font-weight: bold;
+    color: #3b61c9;
+}
+
+.reveal-btn {
+    padding: 10px 16px;
+    background: #3b61c9;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.reveal-btn:hover {
+    background: #3b61c9;
+}
