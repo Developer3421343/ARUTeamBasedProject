@@ -147,3 +147,45 @@
 .carousel-dot:hover::not(.selected)::before {
     background-color: darkgrey;
 }
+
+
+
+.hidden {
+    display: none;
+}
+
+.showanswer {
+    background-color: indigo;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+}
+
+.examquestion{
+    background: #f4f7ff;
+    border: 1px solid #d5ddff;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 30px 0;
+}
+
+.answer{
+    margin-top: 15px;
+    padding: 12px;
+    background: #e8f0ff;
+    border-left: 4px solid #1a73e8;
+    border-radius: 6px;
+}
+
+.questionintorow{
+    display: flex;
+    margin: 30px 0;    
+    gap: 20px;
+}
+
+.questionintorow .examquestion{
+    flex: 1;
+}
