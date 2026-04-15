@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Measures And Accuracy! | One and Done</title>       <!-- INSERT LESSON NAME -->
+    <title>Measures And Accuracy! | One and Done</title> <!-- INSERT LESSON NAME -->
     <!-- Header -->
     <script src="/scripts/common/header.js" defer></script>
     <link rel="stylesheet" href="/stylesheets/common/header.css">
@@ -16,6 +16,7 @@
     <!-- Lesson styling -->
     <link rel="stylesheet" href="/stylesheets/shared/lessons.css">
     <link rel="stylesheet" href="/stylesheets/JC1861-Lesson-1.css">
+    <script src="/stylesheets/JC1861-Lesson-1.js" defer></script>
     <script type="module" src="/scripts/shared/components/scroll-to-top.js"></script>
 </head>
 
@@ -29,243 +30,415 @@
             </ul>
         </nav>
         <main>
-            <div id="lesson-intro">
+            <div class="TextBackgroundMain">
                 <h2>Welcome to this lesson on Measures!</h2>
-                    <p>In this lesson we will explore the basics of how to use certain measures, and why it is important for us to get them right! After we have explored this we
-                    will dive into a few practice questions, showing the correct answer to the questions, and how to work through them step by step!</p>
+                <p>In this lesson we will explore the basics of how to use certain measures, and why it is important for
+                    us to get them right! After we have explored this we
+                    will dive into a few practice questions, showing the correct answer to the questions, and how to
+                    work through them step by step!</p>
                 <h3>Measures:
-                    <p id="Measures Explanation">We will explore geometric measures today, this inlcudes thing like; Perimeter and Area measurement, and how to calculate the volume of an object.
+                    <p id="Measures Explanation">We will explore geometric measures today, this inlcudes thing like;
+                        Perimeter and Area measurement, and how to calculate the volume of an object.
                     </p>
                 </h3>
-
-                <h3>Perimeter and Area/Surface Area</h3>
-                    <ul id="explanation">
-                        <li><b>Perimeter</b> 
-                            <br>
-                            <img src="/images/Perimeter-TPT.png">
-                            <br>
-                            - The perimeter is the total distance around the outside of a 2D shape. You find it by adding up the lengths of all the sides. 
-                                For example, to find the perimeter of a rectangle, you add the lengths of all four sides together. Perimeter is measured in units of length, like centimeters, 
-                                meters, or inches.
-                            <br>
-                            <br>
-                            <b>Why it is useful in everyday tasks</b>
-                            <br>
-                            Finding the perimeter is useful in everyday tasks as it allows us to ascertain the correct amount of materials to buy for a task like fencing off a garden.
-                            Perimeter calculations are most used in construction when precise measurements are required to ensure that spaces are correctly sized, and properly enclosed.
-                            Perimeter calculations can also be used to figure out how large the outlines of different shapes, are even if their areas are different.
-                        </li>
-                        <br>
-                        <br>
-                        <br>
-                        <li><b>Area</b> 
-                            <br>
-                            <img src="/images/Area-TPT.png">
-                            <br>
-                            - Area is the amount of space inside a 2D shape. It tells you how much surface is covered within the boundaries of the shape. 
-                                For example, the area of a rectangle is found by multiplying its length by its width. Area is measured in square units, 
-                                such as square centimeters (cm²) or square meters (m²).
-                            <br>
-                            <br>
-                            <b>Why it is useful in everyday tasks</b>
-                            Working out the area of soemthing can tell you how much space is actually inside a 2D space, extremely useful for working out whether or not you can fit a 
-                            certain item of furniture into a room for example! It allows you also to compare how much difference there is in space between two areas, even if they are a completely different shape.
-                            It is often used again in construction for ascertaining how much material is needed to cover a surface; think roof tiles, wallpaper/paint, grass for a lawn, the list goes on!
-                            <br>
-                        </li>
-                        <br>
-                        <br>
-                        <br>
-                        <li><b>Surface Area</b> 
-                            <br>
-                            <img src="/images/Surface Area - Maths Monks.png">
-                            <br>
-                            - Surface area is the total area of all the outer faces of a 3D object. It shows how much space covers the outside of a solid shape, like a cube or a cylinder. To find surface area, 
-                                you calculate the area of each face and add them together. Surface area is also measured in square units, like cm² or m².
-                            <br>
-                            <br>
-                            <b>Why it is useful in everyday tasks</b>
-                            <br>
-                            The surface area allows us to see how large the oputer surfaces of any given 3d shape are to give an example, this is extremely useful when figuring out how much of a material 
-                            you need to use to wrap something. It also proves particularly important in the realm of science when working out how qucikly things will heat, cool, or react depending on 
-                            the surface area exposed. Engineers and designers use surface area to work out material costs, efficiency, and how many things will fucntion in real life scenarios!
-                            <br>
-                        </li>
-                        <br>
-                        <br>
-                        <br>
-                        <li><b>Volume</b> 
-                            <br>
-                            <img src="/images/Volume - pixelrz.png">
-                            <br>
-                            - Volume is the total space inside of a 3d object. It can tell us how much a solid shape can hold. For example the volume of a cube, a cylinder, or even a sphere
-                            can be calculated and utilised when needed. Volume is measured in cubic units such as cm³, m³, or litres.
-                            <br>
-                            <br>
-                            <b>Why it is useful in everyday tasks</b>
-                            <br>
-                            Volume allows us to understand how mcuh something can hold or store, in building and site planning it is often used to show how much water a tank can hold or how much concrete foundations will need.
-                            It can even help more aquatic areas of research understand for example how much water a boat will displace when it is launched, this can help in the health and safety of the Employees/Spectators of a launch.
-                            <br>
-                        </li>
-                    </ul>
             </div>
-            <div id="lesson-practiceqs">
-                <h3>Practice Questions (With Workings)</h3>
-                <br>
-                <h4>Perimeter</h4>
-                <ul>
-                    <li>
-                        <b class="q-name">Question One: Rectangle</b>
+            <div class="TextBackgroundExplanation">
+                <h3>Perimeter and Area/Surface Area</h3>
+                <ul id="explanation">
+                    <li><b>Perimeter</b>
                         <br>
-                        <p class="q-body">A rectangle has a length of 12 cm and a width of 5 cm; find the perimeter.</p>
-                        <b class="q-headings">Formula</b>
-                        <p class="q-body">Perimeter = 2 × (length + width)</p>
-                        <b class="q-headings">Working:</b>
-                        <p class="q-body">
-                            P = 2 × (12 + 5) 
-                            <br>
-                            P = 2 × 17 
-                            <br>
-                            P = 34 cm
-                        </p>
+                        <img src="/images/Perimeter-TPT.png" alt="An image visualising how perimeter is found">
+                        <br>
+                        - The perimeter is the total distance around the outside of a 2D shape. You find it by adding up
+                        the lengths of all the sides.
+                        For example, to find the perimeter of a rectangle, you add the lengths of all four sides
+                        together. Perimeter is measured in units of length, like centimeters,
+                        meters, or inches.
+                        <br>
+                        <br>
+                        <b>Why it is useful in everyday tasks</b>
+                        <br>
+                        Finding the perimeter is useful in everyday tasks as it allows us to ascertain the correct
+                        amount of materials to buy for a task like fencing off a garden.
+                        Perimeter calculations are most used in construction when precise measurements are required to
+                        ensure that spaces are correctly sized, and properly enclosed.
+                        Perimeter calculations can also be used to figure out how large the outlines of different
+                        shapes, are even if their areas are different.
                     </li>
+                    <!-- <br>
                     <br>
-                    <br>
-                    <li>
-                        <b class="q-name">Question Two: Triangle</b>
+                    <br> -->
+                    <li><b>Area</b>
                         <br>
-                        <p class="q-body">A triangle has sides 7 cm, 9 cm, and 11 cm. Find the perimeter.</p>
-                        <b class="q-headings">Formula</b>
-                        <p class="q-body">Perimeter = side + side + side</p>
-                        <b class="q-headings">Working:</b>
-                        <p class="q-body"> 
-                            P = 7 + 9 + 11
-                            <br>
-                            P = 27 cm
-                        </p>
+                        <img src="/images/Area-TPT.png" alt="An image visualising how area is found">
+                        <br>
+                        - Area is the amount of space inside a 2D shape. It tells you how much surface is covered within
+                        the boundaries of the shape.
+                        For example, the area of a rectangle is found by multiplying its length by its width. Area is
+                        measured in square units,
+                        such as square centimeters (cm²) or square meters (m²).
+                        <br>
+                        <br>
+                        <b>Why it is useful in everyday tasks</b>
+                        Working out the area of something can tell you how much space is actually inside a 2D space,
+                        extremely useful for working out whether or not you can fit a
+                        certain item of furniture into a room for example! It allows you also to compare how much
+                        difference there is in space between two areas, even if they are a completely different shape.
+                        It is often used again in construction for ascertaining how much material is needed to cover a
+                        surface; think roof tiles, wallpaper/paint, grass for a lawn, the list goes on!
+                        <br>
                     </li>
+                    <!-- <br>
                     <br>
-                    <br>
-                    <li>
-                        <b class="q-name">Question Three: Other Shapes - Pentagon, Hexagon etc</b>
+                    <br> -->
+                    <li><b>Surface Area</b>
                         <br>
-                        <p class="q-body">Each side of a regular pentagon is 6 cm. Find the perimeter.</p>
-                        <b class="q-headings">Formula</b>
-                        <p class="q-body">Perimeter = number of sides × side length</p>
-                        <b class="q-headings">Working:</b>
-                        <p class="q-body">
-                            P = 5 × 6
-                            <br>
-                            P = 30 cm
-                        </p>
+                        <img src="/images/Surface Area - Maths Monks.png" alt="An image visualising how surface area is found">
+                        <br>
+                        - Surface area is the total area of all the outer faces of a 3D object. It shows how much space
+                        covers the outside of a solid shape, like a cube or a cylinder. To find surface area,
+                        you calculate the area of each face and add them together. Surface area is also measured in
+                        square units, like cm² or m².
+                        <br>
+                        <br>
+                        <b>Why it is useful in everyday tasks</b>
+                        <br>
+                        The surface area allows us to see how large the oputer surfaces of any given 3d shape are to
+                        give an example, this is extremely useful when figuring out how much of a material
+                        you need to use to wrap something. It also proves particularly important in the realm of science
+                        when working out how qucikly things will heat, cool, or react depending on
+                        the surface area exposed. Engineers and designers use surface area to work out material costs,
+                        efficiency, and how many things will fucntion in real life scenarios!
+                        <br>
                     </li>
+                    <!-- <br>
                     <br>
-                    <br>
-                    <h4>Area</h4>
-                    <li>
-                        <b class="q-name">Question Four: Rectangle</b>
+                    <br> -->
+                    <li><b>Volume</b>
                         <br>
-                        <p class="q-body">A rectangle has a length of 8 m and width of 3 m. Find the area.</p>
-                        <b class="q-headings">Formula</b>
-                        <p class="q-body">Area = length × width</p>
-                        <b class="q-headings">Working:</b>
-                        <p class="q-body">
-                            A = 8 x 3
-                            <br>
-                            A = 24 m²
-                        </p>
-                    </li>
-                    <br>
-                    <br>
-                    <li>
-                        <b class="q-name">Question Five: Triangle</b>
+                        <img src="/images/Volume - pixelrz.png" alt="An image visualising how volume is found">
                         <br>
-                        <p class="q-body">A triangle has a base of 10 cm and height of 6 cm. Find the area.</p>
-                        <b class="q-headings">Formula</b>
-                        <p class="q-body">Area = ½ × base × height</p>
-                        <b class="q-headings">Working:</b>
-                        <p class="q-body">
-                            A = ½ × 10 × 6
-                            <br>
-                            A = 5 × 6
-                            <br>
-                            A = 30 cm²
-                        </p>
-                    </li>
-                    <br>
-                    <br>
-                    <li>
-                        <b class="q-name">Question Six: Circle</b>
+                        - Volume is the total space inside of a 3d object. It can tell us how much a solid shape can
+                        hold. For example the volume of a cube, a cylinder, or even a sphere
+                        can be calculated and utilised when needed. Volume is measured in cubic units such as cm³, m³,
+                        or litres.
                         <br>
-                        <p class="q-body">A circle has a radius of 7 cm. Find the area. <br>(Use π ≈ 3.14)</p>
-                        <b class="q-headings">Formula</b>
-                        <p class="q-body">Area = πr²</p>
-                        <b class="q-headings">Working:</b>
-                        <p class="q-body">
-                            A = 3.14 × 7²
-                            <br>
-                            A = 3.14 × 49
-                            <br>
-                            A = 153.86 cm²
-                        </p>
-                    </li>
-                    <br>
-                    <br>
-                    <h4>Surface Area</h4>
-                    <li>
-                        <b class="q-name">Question Seven: Cube</b>
                         <br>
-                        <p class="q-body">A cube has side length 4 cm. Find the surface area.</p>
-                        <b class="q-headings">Formula</b>
-                        <p class="q-body">Surface Area = 6 × side²</p>
-                        <b class="q-headings">Working:</b>
-                        <p class="q-body">
-                            SA = 6 × 4²
-                            <br>
-                            SA = 6 × 16
-                            <br>
-                            SA = 96 cm²
-                        </p>
-                    </li>
-                    <br>
-                    <br>
-                    <li>
-                        <b class="q-name">Question Eight: Rectangular Prism</b>
+                        <b>Why it is useful in everyday tasks</b>
                         <br>
-                        <p class="q-body">A rectangular prism has length 5 cm, width 3 cm, height 2 cm. Find the surface area.</p>
-                        <b class="q-headings">Formula</b>
-                        <p class="q-body">Surface Area = 2(lw + lh + wh)</p>
-                        <b class="q-headings">Working:</b>
-                        <p class="q-body">
-                            SA = 2[(5×3) + (5×2) + (3×2)]
-                            <br>
-                            SA = 2(15 + 10 + 6)
-                            <br>
-                            SA = 2(31)
-                            <br>
-                            SA = 62 cm²
-                        </p>
-                    </li>
-                    <li>
-                        <b class="q-name">Question Nine: Rectangular Cylinder</b>
+                        Volume allows us to understand how mcuh something can hold or store, in building and site
+                        planning it is often used to show how much water a tank can hold or how much concrete
+                        foundations will need.
+                        It can even help more aquatic areas of research understand for example how much water a boat
+                        will displace when it is launched, this can help in the health and safety of the
+                        Employees/Spectators of a launch.
                         <br>
-                        <p class="q-body">A cylinder has radius 3 cm and height 10 cm. Find the total surface area. (Use π ≈ 3.14)</p>
-                        <b class="q-headings">Formula</b>
-                        <p class="q-body">Surface Area = 2πr² + 2πrh</p>
-                        <b class="q-headings">Working:</b>
-                        <p class="q-body">
-                            SA = 2(3.14)(3²) + 2(3.14)(3)(10)
-                            <br>
-                            SA = 2(3.14)(9) + 2(3.14)(30)
-                            <br>
-                            SA = 56.52 + 188.4
-                            <br>
-                            SA = 244.92 cm²
-                        </p>
                     </li>
                 </ul>
             </div>
+            <div id="lesson-practiceqs">
+                <h3 class="CentreHeading">Practice Questions (With Workings)</h3>
+                <br>
+                <div class="GridContainer">
+
+                    <div class="TextBackgroundPracticeQPt1">
+                        <ul>
+
+                            <li>
+                                <b class="q-name">Question One: Rectangle</b><br>
+                                <p class="q-body">A rectangle has a length of 12 cm and a width of 5 cm; find the
+                                    perimeter.</p>
+
+                                <div class="workings">
+                                    <div class="workings-inner">
+                                        <b class="q-headings">Formula</b>
+                                        <p class="q-body">Perimeter = 2 × (length + width)</p>
+
+                                        <b class="q-headings">Working:</b>
+                                        <p class="q-body">
+                                            P = 2 × (12 + 5)<br>
+                                            P = 2 × 17<br>
+                                            P = <span class="answer">34 cm</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li>
+                                <b class="q-name">Question Two: Triangle</b><br>
+                                <p class="q-body">A triangle has sides 7 cm, 9 cm, and 11 cm. Find the perimeter.</p>
+
+                                <div class="workings">
+                                    <div class="workings-inner">
+                                        <b class="q-headings">Formula</b>
+                                        <p class="q-body">Perimeter = side + side + side</p>
+
+                                        <b class="q-headings">Working:</b>
+                                        <p class="q-body">
+                                            P = 7 + 9 + 11<br>
+                                            P = <span class="answer">27 cm</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li>
+                                <b class="q-name">Question Three: Other Shapes - Pentagon, Hexagon etc</b><br>
+                                <p class="q-body">Each side of a regular pentagon is 6 cm. Find the perimeter.</p>
+
+                                <div class="workings">
+                                    <div class="workings-inner">
+                                        <b class="q-headings">Formula</b>
+                                        <p class="q-body">Perimeter = number of sides × side length</p>
+
+                                        <b class="q-headings">Working:</b>
+                                        <p class="q-body">
+                                            P = 5 × 6<br>
+                                            P = <span class="answer">30 cm</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+
+                        </ul>
+
+                        <button class="reveal-btn">Reveal Answers</button>
+                    </div>
+
+                    <div class="TextBackgroundPracticeQPt2">
+                        <h4>Area</h4>
+
+                        <ul>
+
+                            <li>
+                                <b class="q-name">Question Four: Rectangle</b><br>
+                                <p class="q-body">A rectangle has a length of 8 m and width of 3 m. Find the area.</p>
+
+                                <div class="workings">
+                                    <div class="workings-inner">
+                                        <b class="q-headings">Formula</b>
+                                        <p class="q-body">Area = length × width</p>
+
+                                        <b class="q-headings">Working:</b>
+                                        <p class="q-body">
+                                            A = 8 × 3<br>
+                                            A = <span class="answer">24 m²</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li>
+                                <b class="q-name">Question Five: Triangle</b><br>
+                                <p class="q-body">A triangle has a base of 10 cm and height of 6 cm. Find the area.</p>
+
+                                <div class="workings">
+                                    <div class="workings-inner">
+                                        <b class="q-headings">Formula</b>
+                                        <p class="q-body">Area = ½ × base × height</p>
+
+                                        <b class="q-headings">Working:</b>
+                                        <p class="q-body">
+                                            A = ½ × 10 × 6<br>
+                                            A = 5 × 6<br>
+                                            A = <span class="answer">30 cm²</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li>
+                                <b class="q-name">Question Six: Circle</b><br>
+                                <p class="q-body">A circle has a radius of 7 cm. Find the area. <br>(Use π ≈ 3.14)</p>
+
+                                <div class="workings">
+                                    <div class="workings-inner">
+                                        <b class="q-headings">Formula</b>
+                                        <p class="q-body">Area = πr²</p>
+
+                                        <b class="q-headings">Working:</b>
+                                        <p class="q-body">
+                                            A = 3.14 × 7²<br>
+                                            A = 3.14 × 49<br>
+                                            A = <span class="answer">153.86 cm²</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+
+                        </ul>
+
+                        <button class="reveal-btn">Reveal Answers</button>
+                    </div>
+
+                    <div class="TextBackgroundPracticeQPt3">
+                        <h4>Surface Area</h4>
+
+                        <ul>
+
+                            <li>
+                                <b class="q-name">Question Seven: Cube</b><br>
+                                <p class="q-body">A cube has side length 4 cm. Find the surface area.</p>
+
+                                <div class="workings">
+                                    <div class="workings-inner">
+                                        <b class="q-headings">Formula</b>
+                                        <p class="q-body">Surface Area = 6 × side²</p>
+
+                                        <b class="q-headings">Working:</b>
+                                        <p class="q-body">
+                                            SA = 6 × 4²<br>
+                                            SA = 6 × 16<br>
+                                            SA = <span class="answer">96 cm²</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li>
+                                <b class="q-name">Question Eight: Rectangular Prism</b><br>
+                                <p class="q-body">A rectangular prism has length 5 cm, width 3 cm, height 2 cm. Find the
+                                    surface area.</p>
+
+                                <div class="workings">
+                                    <div class="workings-inner">
+                                        <b class="q-headings">Formula</b>
+                                        <p class="q-body">Surface Area = 2(lw + lh + wh)</p>
+
+                                        <b class="q-headings">Working:</b>
+                                        <p class="q-body">
+                                            SA = 2[(5×3) + (5×2) + (3×2)]<br>
+                                            SA = 2(15 + 10 + 6)<br>
+                                            SA = 2(31)<br>
+                                            SA = <span class="answer">62 cm²</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li>
+                                <b class="q-name">Question Nine: Cylinder</b><br>
+                                <p class="q-body">A cylinder has radius 3 cm and height 10 cm. Find the total surface
+                                    area. (Use π ≈ 3.14)</p>
+
+                                <div class="workings">
+                                    <div class="workings-inner">
+                                        <b class="q-headings">Formula</b>
+                                        <p class="q-body">Surface Area = 2πr² + 2πrh</p>
+
+                                        <b class="q-headings">Working:</b>
+                                        <p class="q-body">
+                                            SA = 2(3.14)(3²) + 2(3.14)(3)(10)<br>
+                                            SA = 2(3.14)(9) + 2(3.14)(30)<br>
+                                            SA = 56.52 + 188.4<br>
+                                            SA = <span class="answer">244.92 cm²</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+
+                        </ul>
+
+                        <button class="reveal-btn">Reveal Answers</button>
+                    </div>
+
+                    <div class="TextBackgroundPracticeQPt4">
+                        <h4>Volume</h4>
+
+                        <ul>
+
+                            <li>
+                                <b class="q-name">Question Ten: Cube</b><br>
+                                <p class="q-body">A cube has a side length of 5 cm. Find the volume.</p>
+
+                                <div class="workings">
+                                    <div class="workings-inner">
+                                        <b class="q-headings">Formula</b>
+                                        <p class="q-body">Volume = side³</p>
+
+                                        <b class="q-headings">Working:</b>
+                                        <p class="q-body">
+                                            V = 5³<br>
+                                            V = 5 × 5 × 5<br>
+                                            V = <span class="answer">125 cm³</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li>
+                                <b class="q-name">Question Eleven: Rectangular Prism</b><br>
+                                <p class="q-body">A rectangular prism has length 10 cm, width 4 cm, height 3 cm. Find
+                                    the volume.</p>
+
+                                <div class="workings">
+                                    <div class="workings-inner">
+                                        <b class="q-headings">Formula</b>
+                                        <p class="q-body">Volume = length × width × height</p>
+
+                                        <b class="q-headings">Working:</b>
+                                        <p class="q-body">
+                                            V = 10 × 4 × 3<br>
+                                            V = 40 × 3<br>
+                                            V = <span class="answer">120 cm³</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li>
+                                <b class="q-name">Question Twelve: Cylinder</b><br>
+                                <p class="q-body">A cylinder has radius 3 cm and height 8 cm. Find the volume.</p>
+
+                                <div class="workings">
+                                    <div class="workings-inner">
+                                        <b class="q-headings">Formula</b>
+                                        <p class="q-body">Volume = πr²h</p>
+
+                                        <b class="q-headings">Working:</b>
+                                        <p class="q-body">
+                                            V = 3.14 × 3² × 8<br>
+                                            V = 3.14 × 9 × 8<br>
+                                            V = 3.14 × 72<br>
+                                            V = <span class="answer">226.08 cm³</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+
+                        </ul>
+
+                        <button class="reveal-btn">Reveal Answers</button>
+                    </div>
+
+                </div>
+
+
+                <h3 class="CentreHeading">Lesson Videos</h3>
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/AAY1bsazcgM?si=KXxTxjc6_yp4adOE"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                    </iframe>
+                </div>
+                <br>
+                <br>
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/xCdxURXMdFY?si=B-56nLGEJ2rv6N13"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                    </iframe>
+                </div>
+                <br>
+                <br>
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/qJwecTgce6c?si=ZYIVuPEjQ5CV_NF-"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
 
         </main>
     </div>
