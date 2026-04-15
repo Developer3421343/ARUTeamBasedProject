@@ -135,11 +135,11 @@ div.header-dropdown-show {
     background-color: var(--secondary-hover);
 }
 
-#header-dropdown-menu > *:first-of-type {
+#header-dropdown-menu > *:first-child {
     border-top-left-radius: inherit;
 }
 
-#header-dropdown-menu > *:last-of-type {
+#header-dropdown-menu > *:last-child {
     border-top-right-radius: inherit;
 }
 
@@ -150,7 +150,13 @@ div.header-dropdown-show {
     border: 1px solid black;
     border-collapse: collapse;
     background-color: var(--secondary-colour);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: black;
 }
+
 
 #header-dropdown-content > div > * {
     flex-grow: 1;
@@ -167,13 +173,13 @@ div.header-dropdown-show {
     font-family: var(--header-font-family);
 }
 
-#header-dropdown-content  *.has-header li:last-of-type:before {
+#header-dropdown-content  *.has-header li:last-child:before {
     content: " └ ";
     color: black;
     font-family: monospace;
 }
 
-#header-dropdown-content  *.has-header li:not(:last-of-type):not(:first-of-type):before {
+#header-dropdown-content  *.has-header li:not(:last-child):not(:first-child):before {
     content: " ├ ";
     color: black;
     font-family: monospace;
