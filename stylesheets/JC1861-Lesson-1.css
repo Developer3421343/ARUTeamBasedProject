@@ -11,6 +11,11 @@
     font-size: larger;     
 }
 
+img {
+    width: 50%;
+    height: auto;
+}
+
 .video-container {
     max-width: 48%;              
     padding: 20px;                 
