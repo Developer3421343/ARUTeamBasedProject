@@ -92,3 +92,10 @@ function navigateCarouselToIndex(carousel, index) {
 }
 
 
+function toggleanswer1() {
+	document.getElementById("answer1").classList.toggle("hidden");
+}
+
+function toggleanswer2() {
+	document.getElementById("answer2").classList.toggle("hidden");
+}
