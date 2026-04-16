@@ -9,6 +9,8 @@ async function loadCSS() {
 await loadCSS();
 
 class QuizElement extends HTMLElement {
+	score = 0;
+	
 	constructor() {
 		super();
 
@@ -30,14 +32,14 @@ class QuizElement extends HTMLElement {
 		}
 
 		// Parse questions
-		let questions = [];
+		this.questions = [];
 		Array.from(this.children)
 			.filter((x) => x.tagName == "UL")
 			.forEach((child) => {
 				let title = child.getAttribute("data-title") ?? "";
 				let answers = Array.from(child.children).map((x) => new Answer(x.innerHTML, (x.getAttribute("data-correct") ?? "").toLowerCase() == "true"));
 				let correctIdx = Array.from(child.children).findIndex((el) => el.dataset.correct === "true");
-				questions.push(new Question(title, answers, correctIdx));
+				this.questions.push(new Question(title, answers, correctIdx));
 			});
 
 		// Clear innerHTML
@@ -56,13 +58,17 @@ class QuizElement extends HTMLElement {
             <b class="quiz-title">${title}</b>
             
             <div id="score-div">
+<<<<<<< HEAD
               <p>Current score: 0/10</p>
               <p>Attempts: 0</p>
+=======
+              <p>Current score: 0/${this.questions.length}</p>
+>>>>>>> origin/main
             </div>`;
 
-		for (let i = 0; i < questions.length; i++) {
+		for (let i = 0; i < this.questions.length; i++) {
 			// Get question
-			let q = questions[i];
+			let q = this.questions[i];
 
 			// Add question title
 			shadow.append(
@@ -96,8 +102,8 @@ class QuizElement extends HTMLElement {
 					document.createElement("br"),
 				);
 
-				questions[i]["answers"][aIdx]["radioElem"] = radioElem;
-				questions[i]["answers"][aIdx]["labelElem"] = labelElem;
+				this.questions[i]["answers"][aIdx]["radioElem"] = radioElem;
+				this.questions[i]["answers"][aIdx]["labelElem"] = labelElem;
 			}
 
 			if (answerVerif == "each") {
@@ -106,7 +112,7 @@ class QuizElement extends HTMLElement {
 					textContent: "Check answer",
 				});
 
-				answerButton.addEventListener("click", () => markAnswers([q]));
+				answerButton.addEventListener("click", () => markAnswers([q], this, shadow));
 
 				// Add answer check button
 				shadow.append(answerButton);
@@ -120,7 +126,7 @@ class QuizElement extends HTMLElement {
 				textContent: "Check answers",
 			});
 
-			answerButton.addEventListener("click", () => markAnswers(questions));
+			answerButton.addEventListener("click", () => markAnswers(this.questions, this, shadow));
 
 			// Add answer check button
 			shadow.append(
@@ -133,7 +139,7 @@ class QuizElement extends HTMLElement {
 
 customElements.define("quiz-element", QuizElement);
 
-function markAnswers(questions) {
+function markAnswers(questions, QuizElement, shadow) {
 	// Iterate through all answers
 	questions.flatMap((x) => x.answers).forEach(answer => {
 		console.log(answer);
@@ -144,10 +150,15 @@ function markAnswers(questions) {
 		if (answer.correct) {
 			// Show as correct
 			answer.labelElem.classList.add("correct");
+			if (answer.correct && answer.radioElem.checked) {
+				QuizElement.score++;
+			}
 		} else if (!answer.correct && answer.radioElem.checked) {
 			// Show as incorrect
 			answer.labelElem.classList.add("false");
 		}
 
 	});
+	
+	shadow.getElementById("score-div").children[0].innerHTML = `Current score: ${QuizElement.score}/${QuizElement.questions.length}`;
 }
