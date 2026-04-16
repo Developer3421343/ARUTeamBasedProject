@@ -159,7 +159,24 @@ function markAnswers(questions, QuizElement, shadow) {
 
 	shadow.getElementById("score-div").children[0].innerHTML = `Current score: ${QuizElement.score}/${QuizElement.questions.length}`;
 
-	let result = "gold";
+	console.log(questions.length );
+	console.log(QuizElement.score);
+
+	const percent = QuizElement.score / questions.length;
+
+    let grade = percent >= 0.8 ? "gold"
+         : percent >= 0.65 ? "silver"
+         : percent >= 0.5 ? "bronze"
+         : "fail";
+
+	const overrides = {
+        gold: "gold",
+        silver: "silver",
+        bronze: "bronze",
+        fail: "fail"
+    };
+
+    let result = overrides[shadow.querySelector(".quiz-title").textContent.toLowerCase()] || grade;
 
 	if (shadow.host.getAttribute("data-medals").toLowerCase() ?? "" == "true") {
 		const resultDiv = Object.assign(document.createElement("div"), {
@@ -174,7 +191,7 @@ function markAnswers(questions, QuizElement, shadow) {
 			}),
 
 			Object.assign(document.createElement("div"), {
-				textContent: "Score: 30/30",
+				textContent: `Score: ${QuizElement.score}/${questions.length}`,
 			}),
 
 			Object.assign(document.createElement("div"), {
