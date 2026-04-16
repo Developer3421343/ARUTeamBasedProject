@@ -1,3 +1,12 @@
+.key-points {
+    background-color: #fff9c4;
+    border-left: 10px solid gold;
+    padding: 5px;
+    margin: 25px 0;
+    border-radius: 5px;
+}
+
+
 .slide-show{
     max-width: 1000px;
     margin: auto;
