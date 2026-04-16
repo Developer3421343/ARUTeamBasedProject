@@ -1,0 +1,86 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #0b1e20;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #255ec7;
+}
+
+.topbar-left .logo {
+  height: 80px;
+  width: 120px;
+}
+
+.topbar-center {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+}
+
+.signup-btn {
+  text-decoration: none;
+  padding: 8px 18px;
+  background-color: #ffc72c;
+  color: #0b1e20;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.main-nav .nav-item {
+  margin: 0 5px;
+  padding: 8px 15px;
+  background-color: #b0babf;
+  color: #0b1e20;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.lessons-container {
+  max-width: 700px;
+  margin: 30px;
+  text-align: left;
+}
+
+.lesson-img {
+  width: 700px;
+  height: 350px;
+  margin: 10px 0;
+}
+
+main button {
+  margin: 8px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  background-color: #ffc72c;
+}
+
+main button:hover {
+  transform: scale(1.05);
+  background-color: #b0babf;
+}
+
+.back-button button {
+  background-color: #255ec7;
+  color: #ffffff;
+}
+
+.back-button button:hover {
+  background-color: #1a3e8c;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}

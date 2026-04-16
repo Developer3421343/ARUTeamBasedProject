@@ -1,3 +1,12 @@
+.key-points {
+    background-color: #fff9c4;
+    border-left: 10px solid gold;
+    padding: 5px;
+    margin: 25px 0;
+    border-radius: 5px;
+}
+
+
 .slide-show{
     max-width: 1000px;
     margin: auto;
@@ -165,8 +174,8 @@
 }
 
 .examquestion{
-    background: #f4f7ff;
-    border: 1px solid #d5ddff;
+    background: rgb(209, 239, 249);
+    border: 2px solid green;
     padding: 20px;
     border-radius: 10px;
     margin: 30px 0;
@@ -175,8 +184,8 @@
 .answer{
     margin-top: 15px;
     padding: 12px;
-    background: #e8f0ff;
-    border-left: 4px solid #1a73e8;
+    background: #000000;
+    border-left: 4px solid #000000;
     border-radius: 6px;
 }
 

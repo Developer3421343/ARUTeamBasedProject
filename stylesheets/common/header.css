@@ -24,6 +24,7 @@ body {
     display: flex;
     flex-direction: row;
     padding-right: 10px;
+    text-decoration: none;
 }
 
 #logo-div a {
@@ -187,5 +188,5 @@ div.header-dropdown-show {
 }
 
 #header-dropdown-content li {
-    line-height: 1.2rem;
+    line-height: 1.18rem;
 }
