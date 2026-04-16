@@ -58,8 +58,7 @@ class QuizElement extends HTMLElement {
             <b class="quiz-title">${title}</b>
             
             <div id="score-div">
-              <p>Current score: 0/30</p>
-              <p>Attempts: 0</p>
+              <p>Current score: 0/${this.questions.length}</p>
             </div>`;
 
 		for (let i = 0; i < this.questions.length; i++) {
