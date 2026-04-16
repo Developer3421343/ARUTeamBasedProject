@@ -33,29 +33,32 @@ const headerNavElements = new Map();
 
 function postHeaderLoad() {
     Array.from(document.getElementById("header-dropdown-menu").children).forEach((menuHeader) => {
-        
-        let target = document.getElementById(menuHeader.getAttribute('aria-controls'));
+        if (menuHeader.dataset.id ?? false) {
+            let target = document.getElementById(menuHeader.getAttribute('aria-controls'));
 
-        switch (target.tagName) {
-            case "DIV":
-                let submenus = [];
+            switch (target.tagName) {
+                case "DIV":
+                    let submenus = [];
 
-                Array.from(target.children).forEach((ul) => {
-                    submenus.push(Array.from(ul.querySelectorAll("a")));
-                });
+                    Array.from(target.children).forEach((ul) => {
+                        submenus.push(Array.from(ul.querySelectorAll("a")));
+                    });
+                    
+                    headerNavElements.set(menuHeader, submenus);
+                    break;
 
-                headerNavElements.set(menuHeader, submenus);
-                break;
+                case "UL":
+                    headerNavElements.set(menuHeader, [target.querySelectorAll("a")]);
+                    break;
 
-            case "UL":
-                headerNavElements.set(menuHeader, [target.querySelectorAll("a")]);
-                break;
-
-            default:
-                break;
+                default:
+                    break;
+            }
         }
-
     });
+
+    
+
     // Navigation handling
     document.getElementById("header-dropdown-div").addEventListener("keydown", (e) => {
         let x = 0;
@@ -102,6 +105,38 @@ function postHeaderLoad() {
             }
         }
     });
+
+    document.querySelectorAll("#header-dropdown-menu [data-id]").forEach((el) => {
+		if (el.dataset.id ?? false) {
+            console.log(el.dataset.id);
+			["mouseover", "focus"].forEach((evt) =>
+				el.addEventListener(evt, () => {
+					document.querySelectorAll(`#header-dropdown-content .header-dropdown-show`).forEach((e) => {
+						e.classList.remove("header-dropdown-show");
+					});
+					document.querySelector(`#header-dropdown-content [data-id="${el.dataset.id}"]`)?.classList.add("header-dropdown-show");
+					el.setAttribute("aria-expanded", "true");
+				}),
+			);
+
+			["mouseout", "blur"].forEach((evt) =>
+				el.addEventListener(evt, () => {
+					document.querySelector(`#header-dropdown-div`)?.classList.remove("header-dropdown-show");
+					el.setAttribute("aria-expanded", "false");
+				}),
+			);
+		}
+	}); 
+
+    document.querySelectorAll("#header-dropdown-menu a").forEach((el) => {
+        ["mouseover", "focus"].forEach((evt) =>
+			el.addEventListener(evt, () => {
+				Array.from(document.getElementById("header-dropdown-content").children).forEach((child) => {
+					child.classList.remove("header-dropdown-show");
+				});
+			}),
+		);
+    })
 }
 
 
