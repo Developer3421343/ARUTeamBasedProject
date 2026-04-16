@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vectors | One and Done</title>
+    <!-- Header -->
+    <script src="/scripts/common/header.js" defer></script>
+    <link rel="stylesheet" href="/stylesheets/common/header.css">
+    <!-- Footer -->
+    <script src="/scripts/common/footer.js" defer></script>
+    <link rel="stylesheet" href="/stylesheets/common/footer.css">
+    <!-- Branding -->
+    <link rel="stylesheet" href="/stylesheets/common/branding.css">
+    <!-- Lesson styling -->
+    <link rel="stylesheet" href="/stylesheets/shared/lessons.css">
+    <link rel="stylesheet" href="/stylesheets/RH1035-Lesson-2.css">
+    <script type="module" src="/scripts/shared/components/scroll-to-top.js"></script>
+    <script type="module" src="/scripts/shared/components/quiz.js"></script>
+</head>
+
+<body>
+    <div class="content">
+        <nav>
+            <ul class="breadcrumb">
+                <li><a href="/">Home</a></li>
+                <li><a href="">Lessons</a></li>
+                <li>Vectors</li>
+            </ul>
+        </nav>
+        <main>
+            <h1>Vectors</h1>
+
+
+
+
+            <h2>Introduction</h2>
+            <p>Vectors define a <b>direction</b> and <b>magnitude</b>, represented by a line with a directional arrow</p>
+            <img class="vector-image small" src="/images/vectors/arrow-vector.png"
+                alt="A circle with the radius annotated">
+            <p>Right/up is positive, left/down is negative</p>
+            <p>Vectors are written as column vectors, with the top being the horizontal movement and bottom vertical</p>
+            <img class="vector-image small" src="/images/vectors/column-vector.png"
+                alt="A circle with the radius annotated"><br>
+
+
+            <h2>Vector arithmetic</h2>
+            <p>To add vectors, add the components seperately (x+x, y+y), likewise subtracting the same way (x-x, y-y)</p>
+            <p>When adding vectors the new vector will be from the start of the first to the end of the last vector</p>
+            <img class="vector-image small" src="/images/vectors/vector-addition.png"
+                alt="A circle with the radius annotated">
+            <p>Similarly, to multiply vectors multiply the individual components by the desired number or vector.</p>
+            <img class="vector-image small" src="/images/vectors/vector-multiplication.png"
+                            alt="A circle with the radius annotated">
+            <p>Multiplying by negative values will flip the vector</p>
+            <p>Parralel vectors are multiples of each other</p>
+            <p>Even if placed differently, equal vectors have the same direction and magnitude</p>
+
+            <h2>Quiz</h2>
+            <quiz-element data-title="Vectors quiz" data-answer-verification="each"> <!-- Optional quiz title, leave blank for auto -->
+                <ul data-title="How are vectors represented?"> <!-- Optional question title, leave blank if omitting -->
+                    <li>An expression</li>
+                    <li data-correct="true">A line with an arrow</li>
+                    <li>A triangle</li>
+                </ul>
+                <ul data-title="When adding vectors the resulting vector will be bigger than both vectors put together on a graph">
+                    <li>True</li>
+                    <li data-correct="true">False</li>
+                </ul>
+                <ul data-title="What is the vector for 4 right and 3 up">
+                    <li>(4, 3)</li>
+                    <li data-correct="true">(4, 3)</li>
+                    <li>(-4, 3)</li>
+                </ul>
+                
+                <ul data-title="What is (2, 5) + (-1, 3)">
+                    <li>(3, 8)</li>
+                    <li>(1, 2)</li>
+                    <li data-correct="true">(1, 8)</li>
+                </ul>
+                
+                <ul data-title="Find AC given AB = (3, -2) and BC = (5, 4)">
+                    <li data-correct="true">(8, 2)</li>
+                    <li>(2, 6)</li>
+                    <li>(8,-2)</li>
+</ul>
+            </quiz-element>
+                <br><br><br>       
+        </main>
+    </div>
+</body>
+
+</html>
