@@ -1,0 +1,11 @@
+.vector-image {
+    width: 400px;
+    height: 400px;
+    padding: 15px;
+}
+
+.vector-image.small {
+    width: 200px;
+    height: 200px;
+    padding: 15px;
+}
