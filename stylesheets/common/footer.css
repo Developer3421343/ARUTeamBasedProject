@@ -14,7 +14,7 @@ footer {
   width: 100%;
 }
 
-footer ul {
+ul {
     list-style: none; 
     color: var(--primary-contrast);
     margin: 0;
