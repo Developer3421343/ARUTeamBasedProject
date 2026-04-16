@@ -136,24 +136,77 @@ customElements.define("quiz-element", QuizElement);
 
 function markAnswers(questions, QuizElement, shadow) {
 	// Iterate through all answers
-	questions.flatMap((x) => x.answers).forEach(answer => {
-		console.log(answer);
-		// Disable radio buttons
-		answer.radioElem.setAttribute("disabled", "true");
+	questions
+		.flatMap((x) => x.answers)
+		.forEach((answer) => {
+			console.log(answer);
+			// Disable radio buttons
+			answer.radioElem.setAttribute("disabled", "true");
 
-		// Check answer
-		if (answer.correct) {
-			// Show as correct
-			answer.labelElem.classList.add("correct");
-			if (answer.correct && answer.radioElem.checked) {
-				QuizElement.score++;
+			// Check answer
+			if (answer.correct) {
+				// Show as correct
+				answer.labelElem.classList.add("correct");
+				if (answer.correct && answer.radioElem.checked) {
+					QuizElement.score++;
+				}
+			} else if (!answer.correct && answer.radioElem.checked) {
+				// Show as incorrect
+				answer.labelElem.classList.add("false");
 			}
-		} else if (!answer.correct && answer.radioElem.checked) {
-			// Show as incorrect
-			answer.labelElem.classList.add("false");
-		}
+		});
 
-	});
-	
 	shadow.getElementById("score-div").children[0].innerHTML = `Current score: ${QuizElement.score}/${QuizElement.questions.length}`;
+
+	console.log(questions.length );
+	console.log(QuizElement.score);
+
+	const percent = QuizElement.score / questions.length;
+
+    let grade = percent >= 0.8 ? "gold"
+         : percent >= 0.65 ? "silver"
+         : percent >= 0.5 ? "bronze"
+         : "fail";
+
+	const overrides = {
+        gold: "gold",
+        silver: "silver",
+        bronze: "bronze",
+        fail: "fail"
+    };
+
+    let result = overrides[shadow.querySelector(".quiz-title").textContent.toLowerCase()] || grade;
+
+	if (shadow.host.getAttribute("data-medals").toLowerCase() ?? "" == "true") {
+		const resultDiv = Object.assign(document.createElement("div"), {
+			className: "asdsdf",
+		});
+
+		shadow.append(
+			document.createElement("hr"),
+			Object.assign(document.createElement("b"), {
+				className: "quiz-title",
+				textContent: "Result",
+			}),
+
+			Object.assign(document.createElement("div"), {
+				textContent: `Score: ${QuizElement.score}/${questions.length}`,
+			}),
+
+			Object.assign(document.createElement("div"), {
+				className: "result-medal",
+				textContent:
+					{
+						"fail": "❌",
+						"bronze": "🥉",
+						"silver": "🥈",
+						"gold": "🥇",
+					}[result] ?? "",
+			}),
+
+			Object.assign(document.createElement("div"), {
+				textContent: result != "fail" ? `Well done, you have achieved ${result} on this exam!` : `Unfortunatley you have failed this exam.`,
+			}),
+		);
+	}
 }

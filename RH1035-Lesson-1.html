@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circles | One and Done</title>
+    <!-- Header -->
+    <script src="/scripts/common/header.js" defer></script>
+    <link rel="stylesheet" href="/stylesheets/common/header.css">
+    <!-- Footer -->
+    <script src="/scripts/common/footer.js" defer></script>
+    <link rel="stylesheet" href="/stylesheets/common/footer.css">
+    <!-- Branding -->
+    <link rel="stylesheet" href="/stylesheets/common/branding.css">
+    <link rel="stylesheet" href="/stylesheets/common/branding.css">
+    <!-- Lesson styling -->
+    <link rel="stylesheet" href="/stylesheets/shared/lessons.css">
+    <link rel="stylesheet" href="/stylesheets/RH1035-Lesson-1.css">
+    <script src="scripts/RH1035-Lesson-1.js" defer></script>
+    <script type="module" src="/scripts/shared/components/scroll-to-top.js"></script>
+    <script type="module" src="/scripts/shared/components/quiz.js"></script>
+</head>
+
+<body>
+    <div class="content">
+        <nav>
+            <ul class="breadcrumb">
+                <li><a href="/">Home</a></li>
+                <li><a href="lessons.html">Lessons</a></li>
+                <li>Circles</li>
+            </ul>
+        </nav>
+        <main>
+            <h1>Circles</h1>
+
+
+
+            <h2>Radius & diameter</h2>
+            <img class="circle-image" src="/images/circles/diameter-radius.png"
+                alt="A circle with the radius annotated"><br>
+            <p>The diameter of a cirlce is the total width of a circle</p>
+            <p>The radius is the distance between the center od the circle and any one point on the edge</p>
+            <p>The radius is always half of the diameter</p>
+            <p class="equation no-bottom-margin">diameter = radius × 2</p>
+            <p class="no-vertical-margin">likewise</p>
+            <p class="equation no-top-margin">radius = diameter ÷ 2</p>
+            <div class="interactive-demo single">
+                <div>
+                    <label for="radius-input">Radius</label><br>
+                    <input type="number" name="radius-input" id="radius-input" value="0" /><br><br>
+                    <label for="diameter-input">Diameter</label><br>
+                    <input type="number" name="diameter-input" id="diameter-input" value="0" />
+                </div>
+            </div>
+            
+
+
+
+
+            <h2>Circumference</h2>
+
+            <img class="circle-image" src="/images/circles/circumference.png"
+                alt="A circle with the circumference annotated"><br>
+            <p>The circumference of a circle is the total length of the distance around the circle</p>
+            <p>The circumference of a circle can be calculated by multiplying the diameter by pi (π)</p>
+            <p class="equation">circumference = π × diameter</p>
+            <p>An easy way of measuring the circumference of real, physical circles is to run a piece of string around
+                the circumference then measure the length with a ruler</p>
+            <div class="interactive-demo">
+                <div>
+                    <label for="circumference-diameter-input">Diameter</label><br>
+                    <input type="number" name="circumference-diameter-input" id="circumference-diameter-input"
+                        value="0" />
+                </div>
+                <div></div>
+                <div>
+                    <label for="">Circumference:</label>
+                    <div id="circumference-output">0</div>
+                </div>
+            </div>
+
+
+
+
+
+            <h2>Area</h2>
+            <img class="circle-image" src="/images/circles/area.png" alt="A circle with the area annotated"><br>
+            <p>The area of a circle can be calculated by multiplying  pi by the radius squared</p>
+            <p class="equation">area = π × radius²</p>
+            <div class="interactive-demo">
+                <div>
+                    <label for="area-radius-input">Radius</label><br>
+                    <input type="number" name="area-radius-input" id="area-radius-input"
+                        value="0" />
+                </div>
+                <div></div>
+                <div>
+                    <label for="">Area:</label>
+                    <div><span id="area-output">0</span><span> units²</span></div>
+                </div>
+            </div>
+
+
+
+
+            <h2>More parts</h2>
+            <img class="circle-image" src="/images/circles/chord.png" alt="A circle with a chord annotated"><br>
+            <p>A chord is a line joining any 2 points on the circumference of a circle</p>
+            <p>An arc is a section of the circumference between two given points</p>
+            <p>A segment is the area enclosed between an arc and it's chord</p>
+            <p>A sector is the area enclose between two radii and their arc</p>
+            <p>A tangent is a straight line which touches only one point on the edge of a circle and is perpendicular to the radius of that point</p>
+
+
+
+
+            <h2>Quiz</h2>
+            <quiz-element data-title="Circles quiz" data-answer-verification="end">
+                <ul data-title="What is a tangent?">
+                    <li>Line cutting through the circle</li>
+                    <li>Line from centre to edge</li>
+                    <li data-correct="true">Line touching the circle once</li>
+                </ul>
+                <ul data-title="A circle has a radius of 6 cm. What is its area?stq">
+                    <li>12π cm²</li>
+                    <li data-correct="true">36π cm²</li>
+                    <li>72π cm²</li>
+                </ul>
+                <ul data-title="What is an arc?">
+                    <li>A straight line</li>
+                    <li data-correct="true">Part of the circumference</li>
+                    <li>The centre</li>
+                </ul>
+                <ul data-title="A circle has a diameter of 18 cm. What is the radius?">
+                    <li data-correct="true">9 cm</li>
+                    <li>18 cm</li>
+                    <li>36 cm</li>
+                </ul>
+                <ul data-title="What is a segment?">
+                    <li>Area between two radii</li>
+                    <li>Whole circle</li>
+                    <li data-correct="true">Area between a chord and an arc</li>
+                </ul>
+                <ul data-title="A circle has radius 5 cm. What is the circumference?">
+                    <li>5π cm</li>
+                    <li data-correct="true">10π cm</li>
+                    <li>25π cm</li>
+                </ul>
+                <ul data-title="What angle is formed between a tangent and radius at the point of contact?">
+                    <li>45°</li>
+                    <li data-correct="true">90°</li>
+                    <li>180°</li>
+                </ul>
+                <ul data-title="A circle has a diameter of 10 cm. What is the area?">
+                    <li data-correct="true">25π cm²</li>
+                    <li>50π cm²</li>
+                    <li>100π cm²</li>
+                </ul>
+                <ul data-title="What is a chord?">
+                    <li>Line from centre to edge</li>
+                    <li>Curved edge</li>
+                    <li data-correct="true">Line joining two points on a circle</li>
+                </ul>
+                <ul data-title="A circle has a radius of 4.5 cm. What is the diameter?">
+                    <li>4.5 cm</li>
+                    <li>2.25 cm</li>
+                    <li data-correct="true">9 cm</li>
+                </ul>
+                <ul data-title="A circle has radius 7 cm. What is the length of a semicircle arc?">
+                    <li>7π cm</li>
+                    <li data-correct="true">14π cm</li>
+                    <li>21π cm</li>
+                </ul>
+                <ul data-title="What is a sector?">
+                    <li data-correct="true">Area between two radii and an arc</li>
+                    <li>Straight line</li>
+                    <li>Half a circle</li>
+                </ul>
+                <ul data-title="A circle has a diameter of 12 cm. What is its circumference?">
+                    <li>12π cm</li>
+                    <li>144π cm</li>
+                    <li data-correct="true">24π cm</li>
+                </ul>
+                <ul data-title="Which statement is always true?">
+                    <li>A chord is always a diameter</li>
+                    <li data-correct="true">The diameter is a chord</li>
+                    <li>A tangent passes through the centre</li>
+                </ul>
+                <ul data-title="A circle has radius 6 cm. What is the area of a semicircle?">
+                    <li>36π cm²</li>
+                    <li>72π cm²</li>
+                    <li data-correct="true">18π cm²</li>
+                </ul>
+            </quiz-element>
+            <br><br>
+        </main>
+    </div>
+</body>
+
+</html>
