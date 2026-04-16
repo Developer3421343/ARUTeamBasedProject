@@ -43,3 +43,7 @@ label.false {
     color: red;
     font-weight: bold;
 }
+
+.result-medal {
+    font-size: 64px;
+}
