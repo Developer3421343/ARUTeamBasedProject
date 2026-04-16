@@ -108,14 +108,20 @@ function postHeaderLoad() {
 				el.addEventListener(evt, () => {
 					document.querySelector(`#header-dropdown-div`)?.classList.remove("header-dropdown-show");
 					el.setAttribute("aria-expanded", "false");
-
-                    Array.from(document.getElementById("header-dropdown-content").children).forEach((child) => {
-                    child.classList.remove("header-dropdown-show");
-                })
-				})
-            );
+				}),
+			);
 		}
 	}); 
+
+    document.querySelectorAll("#header-dropdown-menu a").forEach((el) => {
+        ["mouseover", "focus"].forEach((evt) =>
+			el.addEventListener(evt, () => {
+				Array.from(document.getElementById("header-dropdown-content").children).forEach((child) => {
+					child.classList.remove("header-dropdown-show");
+				});
+			}),
+		);
+    })
 }
 
 
