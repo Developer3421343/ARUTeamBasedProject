@@ -93,11 +93,6 @@ body {
     border-radius: 0 0 var(--header-dropdown-radius) var(--header-dropdown-radius);
 }
 
-#header-dropdown-content ul {
-    list-style: none;
-    padding-left: 3=20px;
-}
-
 #header-dropdown-content > * {
     display: none;
     width: 100%;
@@ -174,5 +169,5 @@ div.header-dropdown-show {
 }
 
 #header-dropdown-content li {
-    line-height: 1.2rem;
+    line-height: 1.18rem;
 }
