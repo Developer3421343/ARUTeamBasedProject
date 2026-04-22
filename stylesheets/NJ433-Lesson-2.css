@@ -16,6 +16,18 @@ h1, h3 {
 
 */
 
+h1{
+    text-align: center;
+}
+
+
+p.solid {
+    border-style: solid;
+        padding: 5px;
+        width: 950px; 
+        color: green;
+}
+
 .powers-table{
     border: 2px solid blueviolet;
     border-collapse: collapse;
@@ -30,11 +42,11 @@ h1, h3 {
     color: rgb(49, 15, 15);
     }
 
-.powers-table td{
-border: 1px solid black;
-padding: 12px;
-text-align: center;
-background-color: lightskyblue;
+.powers-table td {
+    border: 1px solid black;
+    padding: 12px;
+    text-align: center;
+    background-color: lightskyblue;
 }
 
 .powers-table tr:first-child th{
@@ -59,9 +71,7 @@ background-color: lightskyblue;
     background-color: salmon;
 }
 
-h1{
-    text-align: center;
-}
+
 
 *{
     box-sizing: border-box;
@@ -94,26 +104,9 @@ h1{
     opacity: 1; /* Show overlay text on hover */
 }
 
-p.solid {
-    border-style: solid;
-        padding: 5px;
-        width: 950px; 
-        color: green;
-}
 
-.answer{
-    background-color: grey;
-    color: grey;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border-radius: 4px;
-    padding: 0 5px;
-}
 
-.answer:hover {
-    background-color: rgb(86, 86, 226);
-    color: yellow;
-}
+
 
 #calc-power-btn {
     background-color: purple;
@@ -133,8 +126,4 @@ input[type="number"] {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
-}
-
-iframe{
-    max-width: 100%;
 }
