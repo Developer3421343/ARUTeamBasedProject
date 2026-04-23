@@ -1,3 +1,14 @@
+h1{
+    text-align: center;
+}
+
+p.solid {
+    border-style: solid;
+        padding: 5px;
+        width: 1370px; 
+        color: green;
+}
+
 .key-points {
     background-color: #fff9c4;
     border-left: 10px solid gold;
@@ -157,8 +168,33 @@
     background-color: darkgrey;
 }
 
+.common-mistakes {
+    background: plum;
+    border-left: 10px solid #ff0015;
+    padding:  12px;
+    margin: 25px 0;
+    border-radius: 4px;
+}
 
+.common-mistakes h3{
+    margin-top: 0;
+    color:orangered;
+    font-size: 1.3rem;
+}
 
+.common-mistakes ul{
+    margin: 0;
+    padding-left: 25px;
+    font-size: 1.2rem;
+}
+
+.common-mistakes li{
+    margin-bottom: 12px;
+    line-height: 1.5;
+
+}
+
+/* GCSE exam-style questions */
 .hidden {
     display: none;
 }
